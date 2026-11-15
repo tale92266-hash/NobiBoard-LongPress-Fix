@@ -13,7 +13,7 @@ from Maven Central instead:
   Save both as `tools/lib/dexlib2-2.5.2.jar` and `tools/lib/guava.jar`.
   Both are Apache-licensed.
 
-## Build (verified 2026-11-15 — all 114 sources compile clean)
+## Build (verified 2026-11-15 — all 119 sources compile clean)
 
 ```bash
 cd <repo>
@@ -112,7 +112,7 @@ to locate classes/methods/refs and dump method bodies. `DumpMethod2` prints
 instruction indices (used for the dump proofs in the change reports).
 `DexDiff` is kept for reference only — **do not use it** (see `CanonDiff`).
 
-## Tools added after Fix5 (851–861) — the customization arc
+## Tools added after Fix5 (851–863) — the customization arc
 
 | Tool | What it does |
 |---|---|
@@ -128,6 +128,9 @@ instruction indices (used for the dump proofs in the change reports).
 | `DiagPatch859` | 859 — Toast/Log instrumentation ONLY in `Lpud.m` (312 → 387 insns, no behaviour change): P0 first-call Toast, P1 A-key prefs value, P2 SUB OK, P3 GUARD. Renamed from `DiagPatch.java` (the 837 `Lqck.D` diagnostic) to avoid clobbering it. |
 | `CtxFixPatch` | 860 — hooks `Lesb.onCreate()` (`SPUT_OBJECT v1, Lpud->appCtx`) + the Block E Context resolution and Block L / Block W `nobi_diag` writes in `Lpud.m` (387 → 498 insns). |
 | `CtxFix2Patch` | 861 — moves Block L OUTSIDE the `diagFirst` gate (write on every call) + hooks `Lmxa.attachBaseContext` (`SPUT_OBJECT v1, Lpud->appCtx`). |
+| `ToastFixPatch` | 862 — NOPs all 4 Toast call sites in `Lpud.m` in place (P0/P1/P2/P3, 7 NOPs each — code-unit count unchanged, every branch offset identical) + appends ONE catch-all try block around the hook region → GUARD. `Log.e` and the `nobi_diag` writes are kept. |
+| `TryBlockPatch` | 863 — full TryBlock rewrite of `Lpud.m` (494 → 481 insns / 908 units, label-based builder, ONE dexlib2 pass): `diagCalls` / `diagNullCtxCount` counters, `appCtx` → `currentApplication()` fallback, null-ctx → GUARD with NO one-shot lockout, `split(",", -1)`, per-slot empty/cp≤0 → `0x200B`, `last_run` on EVERY call, catch-all try `[0, 697)` → handler (`MOVE_EXCEPTION` → `toString()` → `diagLastErr`) → GUARD, zero Toasts. Uses the SAFER register strategy — NO +N remap (it would push the original body's 4-bit instructions above v15); `p0..p3` never written in the hook. |
+| `MethodRefScan` | 862/863 — scans which method refs a dex actually uses (proved the 862 method_ids drop 57,519 → 57,517 was EXACTLY `Toast.makeText` + `Toast.show`, no new refs). |
 | `MergeEditor860` | 860 — rebuilds the editor (JDK 17 default) and merges `editor.dex` into classes6.dex, preserving `CapsLockHelper`. |
 | `RatioPatch` | 853 — keyboard height ratio default `"1.0"` → `"1.2"` in `Lpfd.<clinit>` (ONE instruction) + the six `config_keyboard_height_ratio_*` restriction defaults. |
 | `Recon`, `Recon2`–`Recon5`, `Sig` | Phase 3 recon tools (method/field/ref searches used to locate the hook points and the fingerprint). |
@@ -136,13 +139,13 @@ instruction indices (used for the dump proofs in the change reports).
 | `TryCheck` | Dumps try-block ranges/handlers for a method (used to verify try blocks after mid-method insertions). |
 | `DumpBranches`, `DumpOps` | Dump helpers (branch targets; instruction opcodes). |
 | `DexVersionBumpFix6`, `DexVersionBumpFix11` | Version-string bumps for builds 846 (Fix6) and 849 (Fix11). |
-| `VerBump`, `VerBump853`, `VerBump855`, `VerBump856`, `VerBump857`, `VerBump858`, `VerBump859`, `VerBump860`, `VerBump861` | Version-string bumps for builds 852–861 (one tool per build; each bumps the version string in classes5, 3 use-sites). |
+| `VerBump`, `VerBump853`, `VerBump855`, `VerBump856`, `VerBump857`, `VerBump858`, `VerBump859`, `VerBump860`, `VerBump861`, `VerBump862`, `VerBump863` | Version-string bumps for builds 852–863 (one tool per build; each bumps the version string in classes5, 3 use-sites). |
 
 ## Notes
 
-- The tools accumulated over the whole arc (Phase 1 → 861). Older
+- The tools accumulated over the whole arc (Phase 1 → 863). Older
   patch tools are kept for history and for reproducing earlier builds;
-  only the 858/860/861 def-parse tools and the gates are current.
+  only the 863 (`TryBlockPatch`) def-parse tool and the gates are current.
 - `ListMethods.java.tmp` was a scratch file and is NOT included.
 - No tool in this repo touches the signing key, reads a password, or
   performs any network access. Signing is a separate manual step (see

@@ -452,16 +452,28 @@ Two consequences that matter for diagnosis:
 | 858 | 176071858 | **Def-parse hook** in `Lpud.m` (insn 0; long-press codes UNTOUCHED, classes2 = Fix11). **Customization STILL does NOT reflect**, even after force-stop. |
 | 859 | 176071859 | **Toast diagnostic** (only `Lpud.m`, no behaviour change). Owner: **NO Toast at all**, popup showed defaults. |
 | 860 | 176071860 | Context fix (`Lesb.onCreate()` → `Lpud->appCtx`) + `nobi_diag` persistent diagnostic (editor Diagnostics section). **Customization STILL does not show. Diagnostics "No record yet" even after force-stop + keyboard open.** |
-| **861** | **176071861** | **CURRENT — BROKEN. Keyboard does NOT open AT ALL after installing over 860.** Owner wants it fixed PERMANENTLY. **DO NOT INSTALL. Rollback is 856.** Cause TBD — `diagnoses/diagnosis-861.md` pending; prime suspects in `PROBLEM_PROMPT.md` §4. |
+| 861 | 176071861 | **BROKEN — SUPERSEDED by 862.** Keyboard does NOT open AT ALL after installing over 860. **Cause PROVEN** (`diagnoses/diagnosis-861.md`): the P0 Toast in `Lpud.m` throws on the no-Looper def-parse thread. DO NOT INSTALL 861. |
+| 862 | 176071862 | **Toast fix** — all 4 Toast call sites in `Lpud.m` NOP'd + ONE catch-all try block → GUARD. Delivered. Superseded by 863. |
+| **863** | **176071863** | **CURRENT. TryBlock rewrite of `Lpud.m`** (481 insns / 908 units): catch-all try block, `diagCalls` / `diagNullCtxCount` counters, `split(",", -1)`, `last_run` on EVERY call, zero Toasts. Change A (delete `attachBaseContext`) REJECTED and NOT done. Delivered. **VERDICT PENDING — install blocked: the phone reports "App not installed as package appears to be invalid" (2026-11-15 12:39 IST). APK verified good on the VM; leading explanation is a truncated/corrupted download — advised fix is delete + re-download.** |
 
 **What is still unknown:**
 
-1. **Why does 861 stop the keyboard from opening?** The two prime
-   suspects: (a) the `Lmxa.attachBaseContext` hook breaks Application
-   startup (`SPUT_OBJECT` into `Lpud` triggers `Lpud.<clinit>` at
-   attach time, before `onCreate()`); (b) the substitution now fires
-   for the first time and throws during def-parse, killing the def
-   load. The `diagnosis-861` (pending) settles this.
+1. **Why did 861 stop the keyboard from opening? — RESOLVED.**
+   `diagnoses/diagnosis-861.md` PROVED the cause: the P0 Toast in
+   `Lpud.m` throws `NullPointerException` ("Can't toast on a thread
+   that has not called Looper.prepare()") on the no-Looper def-parse
+   thread, killing the def load. Both prime suspects were REFUTED:
+   (a) the `attachBaseContext` hook is SAFE (process stays alive,
+   Settings/editor work); (b) the substitution is throw-free for the
+   owner's exact prefs value. Fixed in 862 (Toasts removed + try/catch)
+   and 863 (TryBlock rewrite).
+2. **Why does 863 report "App not installed as package appears to be
+   invalid"? — OPEN (2026-11-15 12:39 IST).** The APK was verified good
+   on the VM (unzip -t clean; apksigner "Verifies", v3=true — the SAME
+   signature pattern as 856/861, which installed fine; Drive size ==
+   local). Leading explanation: truncated/corrupted download on the
+   phone. If a fresh download still fails, re-upload a fresh Drive copy
+   and re-verify; do NOT rebuild blind.
 2. **Why was the Context null on the first `Lpud.m` call in 860?**
    Diagnosis-860 proved the write was gated by `diagFirst` and deduced
    the Context was null on the first call — but the exact trigger

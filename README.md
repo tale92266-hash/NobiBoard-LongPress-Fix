@@ -15,7 +15,7 @@ contains **no Google binaries**: no APK, no dex, no decoded resources,
 no keystore. See
 [What is NOT in this repo](#what-is-not-in-this-repo) below.
 
-## Status (2026-11-15 ~11:45 IST)
+## Status (2026-11-15 ~12:45 IST)
 
 | Build | Code | Result |
 |---|---|---|
@@ -30,7 +30,9 @@ no keystore. See
 | 858 | 176071858 | **Def-parse hook** in `Lpud.m` (insn 0; long-press codes UNTOUCHED, classes2 = Fix11). **Customization STILL does NOT reflect**, even after force-stop. |
 | 859 | 176071859 | **Toast diagnostic** (only `Lpud.m`). Owner: **NO Toast at all**, popup showed defaults. |
 | 860 | 176071860 | Context fix (`Lesb.onCreate()` → `Lpud->appCtx`) + `nobi_diag` diagnostic (editor Diagnostics section). **Customization STILL does not show. Diagnostics "No record yet" even after force-stop + keyboard open.** |
-| **861** | **176071861** | **CURRENT — BROKEN. Keyboard does NOT open AT ALL after installing over 860.** Owner wants it fixed **permanently**. **DO NOT INSTALL. Rollback is 856.** Cause TBD — `diagnoses/diagnosis-861.md` pending; prime suspects in `PROBLEM_PROMPT.md` §4. |
+| 861 | 176071861 | **BROKEN — SUPERSEDED by 862.** Keyboard does NOT open AT ALL after installing over 860. **Cause PROVEN** (`diagnoses/diagnosis-861.md`): the P0 Toast in `Lpud.m` throws on the no-Looper def-parse thread (`Toast.makeText()` → `NullPointerException: "Can't toast on a thread that has not called Looper.prepare()"`), killing the def load. `attachBaseContext` hook + substitution REFUTED as causes. DO NOT INSTALL 861. |
+| 862 | 176071862 | **Toast fix** — all 4 Toast call sites in `Lpud.m` NOP'd in place (Log.e + `nobi_diag` writes kept) + ONE catch-all try block around the hook region → GUARD. Delivered (Drive `1Wet60ytz-D3GLPjUDRXFs7uYiG2iBzTy`). Superseded by 863 (same fix, richer hook). |
+| **863** | **176071863** | **CURRENT. TryBlock rewrite of `Lpud.m`** (481 insns / 908 units): catch-all try block, `diagCalls` / `diagNullCtxCount` counters, `split(",", -1)`, `last_run` on EVERY call, **zero Toasts**. Change A (delete `attachBaseContext` hook) was REJECTED and NOT done — the hook is PROVEN safe. Delivered (Drive `1DQ6SryLn5OOwrW-TRW9fhOYfIU9cTW5E`). **VERDICT PENDING — install blocked: the phone reports "App not installed as package appears to be invalid" (2026-11-15 12:39 IST). The APK was verified good on the VM (unzip -t clean; apksigner "Verifies", v3=true, 1 signer — the SAME v1=false/v2=false/v3=true pattern as 856 and 861, which installed fine; aapt2 parses; keytool cert v2 MATCH; Drive size == local). Leading explanation: truncated/corrupted download on the phone — advised fix is delete + re-download.** |
 
 **The open problem:** make the keyboard ALWAYS open (even if the hook
 fails) AND make the customization from Settings show in the popup, with
@@ -128,20 +130,21 @@ README.md            this file
 PROBLEM_PROMPT.md    standalone problem statement for another AI (no prior context needed)
 POPUP_MECHANISM.md   how the popup + long-press code actually works (READ FIRST, then the smali)
 TOOLS.md             every tool, what it does, compile/run commands
-apktool.yml          the apktool config from the 861 build (text; versionCode must be bumped per build)
+apktool.yml          the apktool config from the 863 build (text; versionCode must be bumped per build)
 manifest-summary.txt package / versionCode / SDKs / launchable activity (summary only, NOT the full manifest)
 smali/
   qmu.smali qml.smali qmr.smali qck.smali qme.smali qmc.smali qmf.smali
   piy.smali qms.smali qmt.smali tga.smali
   pud.smali mxa.smali esb.smali
-                     baksmali disassembly (from the shipped 861 APK, code 176071861)
+                     baksmali disassembly (pud.smali from the shipped 863 APK, code 176071863;
+                     the rest from the shipped 861 APK — mxa/esb verified byte-identical in 863)
                      of the popup/long-press classes + the def-parse/Context hook classes
   com/google/android/libraries/inputmethod/popup/
     SilkRectangularPopupView.smali
                      the popup view itself
   README.md          per-file source-version notes
 tools/
-  src/*.java         all 114 patch + verification tools (default package; dexlib2 2.5.2 + Guava)
+  src/*.java         all 119 patch + verification tools (default package; dexlib2 2.5.2 + Guava)
   lib/               dexlib2-2.5.2.jar, guava.jar (Apache-licensed; in the ZIP only, NOT in the git repo)
 docs/
   change-report-fix3.md     Fix3 (176071839, WORKING) — glide fix
@@ -154,20 +157,21 @@ docs/
   diagnosis-tracker.md      Phase 2Fix3 diagnosis — tracker frozen at (1,2), swipe dead
   phase3-spec.md            Phase 3 editor spec (owner-approved)
 change-reports/
-  176071851.md ... 176071861.md   one change report per build from Phase 3 (851) to 861
+  176071851.md ... 176071863.md   one change report per build from Phase 3 (851) to 863
 diagnoses/
   diagnosis-857.md          v13 colId clobber + the missing-popup paradox
   diagnosis-859.md          Lpud.m IS the right method; Context-null leading cause
   diagnosis-860.md          Block L gated by diagFirst + Context null on first call
   diagnosis-hook-851.md     the 7 field-access violations that killed 851's popup
-  diagnosis-861.md          PENDING — the current keyboard-not-opening issue
+  diagnosis-861.md          ROOT CAUSE PROVEN — P0 Toast throws on the no-Looper def-parse thread, killing the def load; attachBaseContext + substitution REFUTED
 editor/
   src/com/nobi/nobiboard/
     NobiEmojiEditorActivity.java   the customization editor (incl. the 860 Diagnostics section)
     Defaults.java  EmojiData.java  default emojis + the 246-emoji picker data
 dumps/
   Lpud-m-861.txt  Lmxa-attachBaseContext-861.txt  Lesb-onCreate-861.txt  Lqmu-c-861.txt
-                     (dexdump excerpts from 861, positions stripped)
+  Lpud-m-862.txt  Lpud-m-863.txt
+                     (dexdump excerpts from 861–863, positions stripped)
   Lqmu-o-fix5.txt  Lqmu.i-fix5.txt  Lqml-k-fix5.txt  Lqmu-c-fix5.txt
   Lqml-e-fix5.txt  Lqmu-n-fix5.txt  Lqmu-p-fix5.txt  Lqmu-m-fix5.txt
   Lqmu-e-fix5.txt  Lqck-D-fix5diag.txt   (dexdump excerpts from Fix5, positions stripped)
