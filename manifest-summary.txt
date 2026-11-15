@@ -1,0 +1,22 @@
+# AndroidManifest summary — NobiBoard Fix5 (code 176071841)
+# Generated with: aapt2 dump badging <apk>
+# NOTE: this is a SUMMARY only. The full binary AndroidManifest.xml is NOT
+# included in this repo (it is part of Google's proprietary Gboard package).
+# Reproduce it by decoding your own base XAPK with `apktool d -s`.
+
+package: name='com.nobi.nobiboard' versionCode='176071841' versionName='18.6.3.1002251336-release-arm64-v8a'
+original-package: 'com.google.android.inputmethod.latin'
+minSdkVersion: '29'
+targetSdkVersion: '37'
+compileSdkVersion: '37'
+application: label='NobiBoard' icon='res/mipmap-anydpi/ic_app.xml'
+launchable-activity: name='com.google.android.libraries.inputmethod.launcher.LauncherActivity'
+
+# Permissions (from aapt2 dump badging; full list in the badging output):
+# ACCESS_NETWORK_STATE, ACCESS_WIFI_STATE, GET_ACCOUNTS, INTERNET,
+# READ_CONTACTS, READ_USER_DICTIONARY, RECEIVE_BOOT_COMPLETED, VIBRATE,
+# WRITE_USER_DICTIONARY, GET_PACKAGE_SIZE, WAKE_LOCK, FOREGROUND_SERVICE,
+# RECORD_AUDIO, CAMERA, READ_MEDIA_IMAGES, READ_MEDIA_VISUAL_USER_SELECTED,
+# INTERACT_ACROSS_PROFILES, INJECT_KEY_EVENTS, READ_EXTERNAL_STORAGE (maxSdk 32),
+# plus Google service permissions (READ_GSERVICES, BIND_SERVICE, etc.).
+# These are the stock Gboard 18.6.3 permissions, unchanged by the patches.

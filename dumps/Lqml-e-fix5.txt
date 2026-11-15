@@ -1,0 +1,79 @@
+# dexdump excerpt — Lqml;->e()V
+# Source: NobiBoard Fix5 (code 176071841) classes2.dex
+# Generated with: dexdump -d classes2.dex (Android build-tools 35.0.0)
+# NOTE: the 'positions' (line-number) block was stripped for brevity; bytecode is complete.
+# This is a short excerpt of Google's proprietary Gboard bytecode, reproduced for debugging/interoperability.
+
+      name          : 'e'
+      type          : '()V'
+      access        : 0x0001 (PUBLIC)
+      code          -
+      registers     : 6
+      ins           : 1
+      outs          : 3
+      insns size    : 115 16-bit code units
+c36b94:                                        |[c36b94] qml.e:()V
+c36ba4: 1204                                   |0000: const/4 v4, #int 0 // #0
+c36ba6: 5450 eb90                              |0001: iget-object v0, v5, Lqml;.e:Ljava/util/List; // field@90eb
+c36baa: 3800 3800                              |0003: if-eqz v0, 003b // +0038
+c36bae: 7210 109f 0000                         |0005: invoke-interface {v0}, Ljava/util/List;.size:()I // method@9f10
+c36bb4: 0a01                                   |0008: move-result v1
+c36bb6: 1302 0900                              |0009: const/16 v2, #int 9 // #9
+c36bba: 3321 3000                              |000b: if-ne v1, v2, 003b // +0030
+c36bbe: 1231                                   |000d: const/4 v1, #int 3 // #3
+c36bc0: 7220 049f 1000                         |000e: invoke-interface {v0, v1}, Ljava/util/List;.get:(I)Ljava/lang/Object; // method@9f04
+c36bc6: 0c01                                   |0011: move-result-object v1
+c36bc8: 2012 d12d                              |0012: instance-of v2, v1, Lpva; // type@2dd1
+c36bcc: 3802 2700                              |0014: if-eqz v2, 003b // +0027
+c36bd0: 5412 918d                              |0016: iget-object v2, v1, Lpva;.e:Ljava/lang/Object; // field@8d91
+c36bd4: 2023 281e                              |0018: instance-of v3, v2, Ljava/lang/CharSequence; // type@1e28
+c36bd8: 3803 2100                              |001a: if-eqz v3, 003b // +0021
+c36bdc: 7210 919b 0200                         |001c: invoke-interface {v2}, Ljava/lang/CharSequence;.length:()I // method@9b91
+c36be2: 0a03                                   |001f: move-result v3
+c36be4: 3803 1b00                              |0020: if-eqz v3, 003b // +001b
+c36be8: 1203                                   |0022: const/4 v3, #int 0 // #0
+c36bea: 7120 989b 3200                         |0023: invoke-static {v2, v3}, Ljava/lang/Character;.codePointAt:(Ljava/lang/CharSequence;I)I // method@9b98
+c36bf0: 0a03                                   |0026: move-result v3
+c36bf2: 1502 0100                              |0027: const/high16 v2, #int 65536 // #1
+c36bf6: 3423 1200                              |0029: if-lt v3, v2, 003b // +0012
+c36bfa: 1234                                   |002b: const/4 v4, #int 3 // #3
+c36bfc: 5450 e990                              |002c: iget-object v0, v5, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c36c00: 6e10 3e1e 0000                         |002e: invoke-virtual {v0}, Landroid/view/View;.getParent:()Landroid/view/ViewParent; // method@1e3e
+c36c06: 0c00                                   |0031: move-result-object v0
+c36c08: 1f00 ba06                              |0032: check-cast v0, Landroid/view/View; // type@06ba
+c36c0c: 1401 8607 087f                         |0034: const v1, #float 1.80814e+38 // #7f080786
+c36c12: 6e20 a31e 1000                         |0037: invoke-virtual {v0, v1}, Landroid/view/View;.setBackgroundResource:(I)V // method@1ea3
+c36c18: 2810                                   |003a: goto 004a // +0010
+c36c1a: 5450 e990                              |003b: iget-object v0, v5, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c36c1e: 6e10 3e1e 0000                         |003d: invoke-virtual {v0}, Landroid/view/View;.getParent:()Landroid/view/ViewParent; // method@1e3e
+c36c24: 0c00                                   |0040: move-result-object v0
+c36c26: 1f00 ba06                              |0041: check-cast v0, Landroid/view/View; // type@06ba
+c36c2a: 1401 1903 087f                         |0043: const v1, #float 1.80791e+38 // #7f080319
+c36c30: 6e20 a31e 1000                         |0046: invoke-virtual {v0, v1}, Landroid/view/View;.setBackgroundResource:(I)V // method@1ea3
+c36c36: 0000                                   |0049: nop // spacer
+c36c38: 5450 ea90                              |004a: iget-object v0, v5, Lqml;.d:Ljava/util/List; // field@90ea
+c36c3c: 7210 079f 0000                         |004c: invoke-interface {v0}, Ljava/util/List;.isEmpty:()Z // method@9f07
+c36c42: 0a01                                   |004f: move-result v1
+c36c44: 3901 2200                              |0050: if-nez v1, 0072 // +0022
+c36c48: 5451 ec90                              |0052: iget-object v1, v5, Lqml;.f:Lqmo; // field@90ec
+c36c4c: 5412 0691                              |0054: iget-object v2, v1, Lqmo;.c:Lqmm; // field@9106
+c36c50: 5523 f590                              |0056: iget-boolean v3, v2, Lqmm;.d:Z // field@90f5
+c36c54: 0000                                   |0058: nop // spacer
+c36c56: 3903 0a00                              |0059: if-nez v3, 0063 // +000a
+c36c5a: 5522 f890                              |005b: iget-boolean v2, v2, Lqmm;.g:Z // field@90f8
+c36c5e: 3902 0600                              |005d: if-nez v2, 0063 // +0006
+c36c62: 5411 0791                              |005f: iget-object v1, v1, Lqmo;.d:Lqmn; // field@9107
+c36c66: 5214 fe90                              |0061: iget v4, v1, Lqmn;.f:I // field@90fe
+c36c6a: 7220 049f 4000                         |0063: invoke-interface {v0, v4}, Ljava/util/List;.get:(I)Ljava/lang/Object; // method@9f04
+c36c70: 0c00                                   |0066: move-result-object v0
+c36c72: 1f00 ba06                              |0067: check-cast v0, Landroid/view/View; // type@06ba
+c36c76: 5551 e790                              |0069: iget-boolean v1, v5, Lqml;.a:Z // field@90e7
+c36c7a: 7030 4fe0 0501                         |006b: invoke-direct {v5, v0, v1}, Lqml;.m:(Landroid/view/View;Z)V // method@e04f
+c36c80: 5954 ed90                              |006e: iput v4, v5, Lqml;.g:I // field@90ed
+c36c84: 5954 ee90                              |0070: iput v4, v5, Lqml;.h:I // field@90ee
+c36c88: 0e00                                   |0072: return-void
+      catches       : (none)
+      locals        :
+        0x0000 - 0x0073 reg=5 this Lqml;
+
+    #5              : (in Lqml;)

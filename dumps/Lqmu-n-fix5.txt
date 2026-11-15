@@ -1,0 +1,29 @@
+# dexdump excerpt — Lqmu;->n()V
+# Source: NobiBoard Fix5 (code 176071841) classes2.dex
+# Generated with: dexdump -d classes2.dex (Android build-tools 35.0.0)
+# NOTE: the 'positions' (line-number) block was stripped for brevity; bytecode is complete.
+# This is a short excerpt of Google's proprietary Gboard bytecode, reproduced for debugging/interoperability.
+
+      name          : 'n'
+      type          : '()V'
+      access        : 0x0011 (PUBLIC FINAL)
+      code          -
+      registers     : 2
+      ins           : 1
+      outs          : 2
+      insns size    : 15 16-bit code units
+c382c0:                                        |[c382c0] qmu.n:()V
+c382d0: 5410 1991                              |0000: iget-object v0, v1, Lqmu;.g:Lqmr; // field@9119
+c382d4: 7110 c9be 0000                         |0002: invoke-static {v0}, Lmgw;.K:(Lqmd;)Lqmc; // method@bec9
+c382da: 0c00                                   |0005: move-result-object v0
+c382dc: 3800 0800                              |0006: if-eqz v0, 000e // +0008
+c382e0: 6e20 75e0 0100                         |0008: invoke-virtual {v1, v0}, Lqmu;.m:(Lqmc;)V // method@e075
+c382e6: 7020 77e0 0100                         |000b: invoke-direct {v1, v0}, Lqmu;.o:(Lqmc;)V // method@e077
+c382ec: 0e00                                   |000e: return-void
+      catches       : (none)
+      locals        :
+        0x0000 - 0x000f reg=1 this Lqmu;
+
+  source_file_idx   : 25336 (PG)
+
+Class #8386            -

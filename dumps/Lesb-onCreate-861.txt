@@ -1,0 +1,31 @@
+# dexdump excerpt — Lesb;->onCreate()V
+# Source: NobiBoard 176071861 (2026-11-15) classes.dex
+# Generated with: dexdump -d classes.dex (Android build-tools 35.0.0)
+# NOTE: the 'positions' (line-number) block was stripped for brevity; bytecode is complete.
+# This is a short excerpt of Google's proprietary Gboard bytecode, reproduced for debugging/interoperability.
+
+    #2              : (in Lesb;)
+      name          : 'onCreate'
+      type          : '()V'
+      access        : 0x0011 (PUBLIC FINAL)
+      code          -
+      registers     : 2
+      ins           : 1
+      outs          : 1
+      insns size    : 19 16-bit code units
+839f38:                                        |[839f38] esb.onCreate:()V
+839f48: 6901 c15c                              |0000: sput-object v1, Lpud;.appCtx:Landroid/content/Context; // field@5cc1
+839f4c: 5510 8925                              |0002: iget-boolean v0, v1, Lesb;.g:Z // field@2589
+839f50: 3900 0b00                              |0004: if-nez v0, 000f // +000b
+839f54: 1210                                   |0006: const/4 v0, #int 1 // #1
+839f56: 5c10 8925                              |0007: iput-boolean v0, v1, Lesb;.g:Z // field@2589
+839f5a: 6e10 d045 0100                         |0009: invoke-virtual {v1}, Lesb;.b:()Ljava/lang/Object; // method@45d0
+839f60: 0710                                   |000c: move-object v0, v1
+839f62: 1f00 210b                              |000d: check-cast v0, Lcom/google/android/apps/inputmethod/latin/HiltLatinApp; // type@0b21
+839f66: 6f10 e345 0100                         |000f: invoke-super {v1}, Lesf;.onCreate:()V // method@45e3
+839f6c: 0e00                                   |0012: return-void
+      catches       : (none)
+      locals        :
+        0x0000 - 0x0013 reg=1 this Lesb;
+
+  source_file_idx   : 24980 (PG)

@@ -1,0 +1,19 @@
+# Never commit binaries, keystores, credentials, or Google's proprietary files.
+*.apk
+*.apks
+*.xapk
+*.dex
+*.p12
+*.keystore
+*.jks
+*.pass
+*.pass.txt
+*.pem
+*.key
+# Dependency jars are NOT committed (download from Maven Central, see TOOLS.md).
+# They ARE included in the accompanying ZIP.
+tools/lib/
+**/decoded/
+**/build/
+*.class
+.DS_Store

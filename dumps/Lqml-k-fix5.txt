@@ -1,0 +1,316 @@
+# dexdump excerpt — Lqml;->k(FF)Lpva;
+# Source: NobiBoard Fix5 (code 176071841) classes2.dex
+# Generated with: dexdump -d classes2.dex (Android build-tools 35.0.0)
+# NOTE: the 'positions' (line-number) block was stripped for brevity; bytecode is complete.
+# This is a short excerpt of Google's proprietary Gboard bytecode, reproduced for debugging/interoperability.
+
+      name          : 'k'
+      type          : '(FF)Lpva;'
+      access        : 0x0011 (PUBLIC FINAL)
+      code          -
+      registers     : 13
+      ins           : 3
+      outs          : 7
+      insns size    : 503 16-bit code units
+c36e38:                                        |[c36e38] qml.k:(FF)Lpva;
+c36e48: 54a0 eb90                              |0000: iget-object v0, v10, Lqml;.e:Ljava/util/List; // field@90eb
+c36e4c: 3800 a600                              |0002: if-eqz v0, 00a8 // +00a6
+c36e50: 7210 109f 0000                         |0004: invoke-interface {v0}, Ljava/util/List;.size:()I // method@9f10
+c36e56: 0a01                                   |0007: move-result v1
+c36e58: 1302 0900                              |0008: const/16 v2, #int 9 // #9
+c36e5c: 3321 9e00                              |000a: if-ne v1, v2, 00a8 // +009e
+c36e60: 1231                                   |000c: const/4 v1, #int 3 // #3
+c36e62: 7220 049f 1000                         |000d: invoke-interface {v0, v1}, Ljava/util/List;.get:(I)Ljava/lang/Object; // method@9f04
+c36e68: 0c01                                   |0010: move-result-object v1
+c36e6a: 2012 d12d                              |0011: instance-of v2, v1, Lpva; // type@2dd1
+c36e6e: 3802 9500                              |0013: if-eqz v2, 00a8 // +0095
+c36e72: 5412 918d                              |0015: iget-object v2, v1, Lpva;.e:Ljava/lang/Object; // field@8d91
+c36e76: 2023 281e                              |0017: instance-of v3, v2, Ljava/lang/CharSequence; // type@1e28
+c36e7a: 3803 8f00                              |0019: if-eqz v3, 00a8 // +008f
+c36e7e: 7210 919b 0200                         |001b: invoke-interface {v2}, Ljava/lang/CharSequence;.length:()I // method@9b91
+c36e84: 0a03                                   |001e: move-result v3
+c36e86: 3803 8900                              |001f: if-eqz v3, 00a8 // +0089
+c36e8a: 1203                                   |0021: const/4 v3, #int 0 // #0
+c36e8c: 7120 989b 3200                         |0022: invoke-static {v2, v3}, Ljava/lang/Character;.codePointAt:(Ljava/lang/CharSequence;I)I // method@9b98
+c36e92: 0a03                                   |0025: move-result v3
+c36e94: 1502 0100                              |0026: const/high16 v2, #int 65536 // #1
+c36e98: 3423 8000                              |0028: if-lt v3, v2, 00a8 // +0080
+c36e9c: 54a0 ea90                              |002a: iget-object v0, v10, Lqml;.d:Ljava/util/List; // field@90ea
+c36ea0: 7210 079f 0000                         |002c: invoke-interface {v0}, Ljava/util/List;.isEmpty:()Z // method@9f07
+c36ea6: 0a00                                   |002f: move-result v0
+c36ea8: 3900 7800                              |0030: if-nez v0, 00a8 // +0078
+c36eac: 20a0 132f                              |0032: instance-of v0, v10, Lqmu; // type@2f13
+c36eb0: 3800 7400                              |0034: if-eqz v0, 00a8 // +0074
+c36eb4: 1f0a 132f                              |0036: check-cast v10, Lqmu; // type@2f13
+c36eb8: 52a1 ef90                              |0038: iget v1, v10, Lqml;.i:F // field@90ef
+c36ebc: 8711                                   |003a: float-to-int v1, v1
+c36ebe: 52a3 e890                              |003b: iget v3, v10, Lqml;.b:F // field@90e8
+c36ec2: 8733                                   |003d: float-to-int v3, v3
+c36ec4: 3901 0400                              |003e: if-nez v1, 0042 // +0004
+c36ec8: 3803 6800                              |0040: if-eqz v3, 00a8 // +0068
+c36ecc: 54a9 e990                              |0042: iget-object v9, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c36ed0: 6e10 f622 0900                         |0044: invoke-virtual {v9}, Landroid/widget/LinearLayout;.getWidth:()I // method@22f6
+c36ed6: 0a04                                   |0047: move-result v4
+c36ed8: 6e10 3a1e 0900                         |0048: invoke-virtual {v9}, Landroid/view/View;.getPaddingLeft:()I // method@1e3a
+c36ede: 0a02                                   |004b: move-result v2
+c36ee0: 9104 0402                              |004c: sub-int v4, v4, v2
+c36ee4: 6e10 3b1e 0900                         |004e: invoke-virtual {v9}, Landroid/view/View;.getPaddingRight:()I // method@1e3b
+c36eea: 0a02                                   |0051: move-result v2
+c36eec: 9104 0402                              |0052: sub-int v4, v4, v2
+c36ef0: 6e10 ea22 0900                         |0054: invoke-virtual {v9}, Landroid/widget/LinearLayout;.getHeight:()I // method@22ea
+c36ef6: 0a05                                   |0057: move-result v5
+c36ef8: 6e10 3d1e 0900                         |0058: invoke-virtual {v9}, Landroid/view/View;.getPaddingTop:()I // method@1e3d
+c36efe: 0a02                                   |005b: move-result v2
+c36f00: 9105 0502                              |005c: sub-int v5, v5, v2
+c36f04: 6e10 381e 0900                         |005e: invoke-virtual {v9}, Landroid/view/View;.getPaddingBottom:()I // method@1e38
+c36f0a: 0a02                                   |0061: move-result v2
+c36f0c: 9105 0502                              |0062: sub-int v5, v5, v2
+c36f10: 1232                                   |0064: const/4 v2, #int 3 // #3
+c36f12: 9306 0402                              |0065: div-int v6, v4, v2
+c36f16: 9307 0502                              |0067: div-int v7, v5, v2
+c36f1a: 1222                                   |0069: const/4 v2, #int 2 // #2
+c36f1c: 9308 0402                              |006a: div-int v8, v4, v2
+c36f20: 9309 0502                              |006c: div-int v9, v5, v2
+c36f24: 87b0                                   |006e: float-to-int v0, v11
+c36f26: 9100 0001                              |006f: sub-int v0, v0, v1
+c36f2a: 87c2                                   |0071: float-to-int v2, v12
+c36f2c: 9102 0203                              |0072: sub-int v2, v2, v3
+c36f30: 7b01                                   |0074: neg-int v1, v0
+c36f32: 7b23                                   |0075: neg-int v3, v2
+c36f34: 3560 0b00                              |0076: if-ge v0, v6, 0081 // +000b
+c36f38: 3561 0900                              |0078: if-ge v1, v6, 0081 // +0009
+c36f3c: 3572 0700                              |007a: if-ge v2, v7, 0081 // +0007
+c36f40: 3573 0500                              |007c: if-ge v3, v7, 0081 // +0005
+c36f44: 0186                                   |007e: move v6, v8
+c36f46: 0197                                   |007f: move v7, v9
+c36f48: 281c                                   |0080: goto 009c // +001c
+c36f4a: 3602 0800                              |0081: if-gt v2, v0, 0089 // +0008
+c36f4e: 3612 0600                              |0083: if-gt v2, v1, 0089 // +0006
+c36f52: 0186                                   |0085: move v6, v8
+c36f54: 9107 0907                              |0086: sub-int v7, v9, v7
+c36f58: 2814                                   |0088: goto 009c // +0014
+c36f5a: 3402 0800                              |0089: if-lt v2, v0, 0091 // +0008
+c36f5e: 3412 0600                              |008b: if-lt v2, v1, 0091 // +0006
+c36f62: 0186                                   |008d: move v6, v8
+c36f64: 9007 0907                              |008e: add-int v7, v9, v7
+c36f68: 280c                                   |0090: goto 009c // +000c
+c36f6a: 3620 0800                              |0091: if-gt v0, v2, 0099 // +0008
+c36f6e: 3630 0600                              |0093: if-gt v0, v3, 0099 // +0006
+c36f72: 9106 0806                              |0095: sub-int v6, v8, v6
+c36f76: 0197                                   |0097: move v7, v9
+c36f78: 2804                                   |0098: goto 009c // +0004
+c36f7a: 9006 0806                              |0099: add-int v6, v8, v6
+c36f7e: 0197                                   |009b: move v7, v9
+c36f80: 6e30 4be0 6a07                         |009c: invoke-virtual {v10, v6, v7}, Lqml;.i:(II)V // method@e04b
+c36f86: 6e10 76e0 0a00                         |009f: invoke-virtual {v10}, Lqmu;.n:()V // method@e076
+c36f8c: 6e10 43e0 0a00                         |00a2: invoke-virtual {v10}, Lqml;.a:()Lpva; // method@e043
+c36f92: 0c00                                   |00a5: move-result-object v0
+c36f94: 1100                                   |00a6: return-object v0
+c36f96: 0000                                   |00a7: nop // spacer
+c36f98: 54a0 e990                              |00a8: iget-object v0, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c36f9c: 1201                                   |00aa: const/4 v1, #int 0 // #0
+c36f9e: 3800 3d01                              |00ab: if-eqz v0, 01e8 // +013d
+c36fa2: 54a0 ea90                              |00ad: iget-object v0, v10, Lqml;.d:Ljava/util/List; // field@90ea
+c36fa6: 7210 079f 0000                         |00af: invoke-interface {v0}, Ljava/util/List;.isEmpty:()Z // method@9f07
+c36fac: 0a02                                   |00b2: move-result v2
+c36fae: 3902 3501                              |00b3: if-nez v2, 01e8 // +0135
+c36fb2: 1202                                   |00b5: const/4 v2, #int 0 // #0
+c36fb4: 7220 049f 2000                         |00b6: invoke-interface {v0, v2}, Ljava/util/List;.get:(I)Ljava/lang/Object; // method@9f04
+c36fba: 0c00                                   |00b9: move-result-object v0
+c36fbc: 1f00 ba06                              |00ba: check-cast v0, Landroid/view/View; // type@06ba
+c36fc0: 6e10 571e 0000                         |00bc: invoke-virtual {v0}, Landroid/view/View;.getWidth:()I // method@1e57
+c36fc6: 0a02                                   |00bf: move-result v2
+c36fc8: 3802 2801                              |00c0: if-eqz v2, 01e8 // +0128
+c36fcc: 6e10 231e 0000                         |00c2: invoke-virtual {v0}, Landroid/view/View;.getHeight:()I // method@1e23
+c36fd2: 0a00                                   |00c5: move-result v0
+c36fd4: 3800 2201                              |00c6: if-eqz v0, 01e8 // +0122
+c36fd8: 54a0 ec90                              |00c8: iget-object v0, v10, Lqml;.f:Lqmo; // field@90ec
+c36fdc: 5402 0791                              |00ca: iget-object v2, v0, Lqmo;.d:Lqmn; // field@9107
+c36fe0: 5223 0491                              |00cc: iget v3, v2, Lqmn;.l:I // field@9104
+c36fe4: d804 03ff                              |00ce: add-int/lit8 v4, v3, #int -1 // #ff
+c36fe8: 3803 1701                              |00d0: if-eqz v3, 01e7 // +0117
+c36fec: 3804 6500                              |00d2: if-eqz v4, 0137 // +0065
+c36ff0: 1213                                   |00d4: const/4 v3, #int 1 // #1
+c36ff2: 3234 4900                              |00d5: if-eq v4, v3, 011e // +0049
+c36ff6: 1223                                   |00d7: const/4 v3, #int 2 // #2
+c36ff8: 3234 2400                              |00d8: if-eq v4, v3, 00fc // +0024
+c36ffc: 1233                                   |00da: const/4 v3, #int 3 // #3
+c36ffe: 3334 1b00                              |00db: if-ne v4, v3, 00f6 // +001b
+c37002: 5221 ff90                              |00dd: iget v1, v2, Lqmn;.g:I // field@90ff
+c37006: 8215                                   |00df: int-to-float v5, v1
+c37008: 5221 0091                              |00e0: iget v1, v2, Lqmn;.h:I // field@9100
+c3700c: 8216                                   |00e2: int-to-float v6, v1
+c3700e: 52a7 ef90                              |00e3: iget v7, v10, Lqml;.i:F // field@90ef
+c37012: 54a3 e990                              |00e5: iget-object v3, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c37016: 6e10 ea22 0300                         |00e7: invoke-virtual {v3}, Landroid/widget/LinearLayout;.getHeight:()I // method@22ea
+c3701c: 0a03                                   |00ea: move-result v3
+c3701e: b031                                   |00eb: add-int/2addr v1, v3
+c37020: 5229 0191                              |00ec: iget v9, v2, Lqmn;.i:I // field@9101
+c37024: 8218                                   |00ee: int-to-float v8, v1
+c37026: 01b3                                   |00ef: move v3, v11
+c37028: 01c4                                   |00f0: move v4, v12
+c3702a: 7707 50e0 0300                         |00f1: invoke-static/range {v3, v4, v5, v6, v7, v8, v9}, Lqml;.n:(FFFFFFI)Z // method@e050
+c37030: 0a0b                                   |00f4: move-result v11
+c37032: 2861                                   |00f5: goto 0156 // +0061
+c37034: 220a 561e                              |00f6: new-instance v10, Ljava/lang/RuntimeException; // type@1e56
+c37038: 7030 7c9c 1a01                         |00f8: invoke-direct {v10, v1, v1}, Ljava/lang/RuntimeException;.<init>:(Ljava/lang/String;Ljava/lang/Throwable;)V // method@9c7c
+c3703e: 270a                                   |00fb: throw v10
+c37040: 01b3                                   |00fc: move v3, v11
+c37042: 01c4                                   |00fd: move v4, v12
+c37044: 52a5 ef90                              |00fe: iget v5, v10, Lqml;.i:F // field@90ef
+c37048: 522b 0091                              |0100: iget v11, v2, Lqmn;.h:I // field@9100
+c3704c: 82b6                                   |0102: int-to-float v6, v11
+c3704e: 522b ff90                              |0103: iget v11, v2, Lqmn;.g:I // field@90ff
+c37052: 54ac e990                              |0105: iget-object v12, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c37056: 6e10 f622 0c00                         |0107: invoke-virtual {v12}, Landroid/widget/LinearLayout;.getWidth:()I // method@22f6
+c3705c: 0a0c                                   |010a: move-result v12
+c3705e: b0cb                                   |010b: add-int/2addr v11, v12
+c37060: 522c 0091                              |010c: iget v12, v2, Lqmn;.h:I // field@9100
+c37064: 54a1 e990                              |010e: iget-object v1, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c37068: 6e10 ea22 0100                         |0110: invoke-virtual {v1}, Landroid/widget/LinearLayout;.getHeight:()I // method@22ea
+c3706e: 0a01                                   |0113: move-result v1
+c37070: b01c                                   |0114: add-int/2addr v12, v1
+c37072: 5229 0191                              |0115: iget v9, v2, Lqmn;.i:I // field@9101
+c37076: 82b7                                   |0117: int-to-float v7, v11
+c37078: 82c8                                   |0118: int-to-float v8, v12
+c3707a: 7707 50e0 0300                         |0119: invoke-static/range {v3, v4, v5, v6, v7, v8, v9}, Lqml;.n:(FFFFFFI)Z // method@e050
+c37080: 0a0b                                   |011c: move-result v11
+c37082: 2839                                   |011d: goto 0156 // +0039
+c37084: 01b3                                   |011e: move v3, v11
+c37086: 01c4                                   |011f: move v4, v12
+c37088: 522b ff90                              |0120: iget v11, v2, Lqmn;.g:I // field@90ff
+c3708c: 82b5                                   |0122: int-to-float v5, v11
+c3708e: 522c 0091                              |0123: iget v12, v2, Lqmn;.h:I // field@9100
+c37092: 82c6                                   |0125: int-to-float v6, v12
+c37094: 54ac e990                              |0126: iget-object v12, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c37098: 6e10 f622 0c00                         |0128: invoke-virtual {v12}, Landroid/widget/LinearLayout;.getWidth:()I // method@22f6
+c3709e: 0a0c                                   |012b: move-result v12
+c370a0: b0cb                                   |012c: add-int/2addr v11, v12
+c370a2: 52a8 e890                              |012d: iget v8, v10, Lqml;.b:F // field@90e8
+c370a6: 5229 0191                              |012f: iget v9, v2, Lqmn;.i:I // field@9101
+c370aa: 82b7                                   |0131: int-to-float v7, v11
+c370ac: 7707 50e0 0300                         |0132: invoke-static/range {v3, v4, v5, v6, v7, v8, v9}, Lqml;.n:(FFFFFFI)Z // method@e050
+c370b2: 0a0b                                   |0135: move-result v11
+c370b4: 2820                                   |0136: goto 0156 // +0020
+c370b6: 01b3                                   |0137: move v3, v11
+c370b8: 01c4                                   |0138: move v4, v12
+c370ba: 522b ff90                              |0139: iget v11, v2, Lqmn;.g:I // field@90ff
+c370be: 82b5                                   |013b: int-to-float v5, v11
+c370c0: 52a6 e890                              |013c: iget v6, v10, Lqml;.b:F // field@90e8
+c370c4: 54ac e990                              |013e: iget-object v12, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c370c8: 6e10 f622 0c00                         |0140: invoke-virtual {v12}, Landroid/widget/LinearLayout;.getWidth:()I // method@22f6
+c370ce: 0a0c                                   |0143: move-result v12
+c370d0: b0cb                                   |0144: add-int/2addr v11, v12
+c370d2: 522c 0091                              |0145: iget v12, v2, Lqmn;.h:I // field@9100
+c370d6: 54a1 e990                              |0147: iget-object v1, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c370da: 6e10 ea22 0100                         |0149: invoke-virtual {v1}, Landroid/widget/LinearLayout;.getHeight:()I // method@22ea
+c370e0: 0a01                                   |014c: move-result v1
+c370e2: b01c                                   |014d: add-int/2addr v12, v1
+c370e4: 5229 0191                              |014e: iget v9, v2, Lqmn;.i:I // field@9101
+c370e8: 82b7                                   |0150: int-to-float v7, v11
+c370ea: 82c8                                   |0151: int-to-float v8, v12
+c370ec: 7707 50e0 0300                         |0152: invoke-static/range {v3, v4, v5, v6, v7, v8, v9}, Lqml;.n:(FFFFFFI)Z // method@e050
+c370f2: 0a0b                                   |0155: move-result v11
+c370f4: 380b 0700                              |0156: if-eqz v11, 015d // +0007
+c370f8: 6e10 44e0 0a00                         |0158: invoke-virtual {v10}, Lqml;.b:()V // method@e044
+c370fe: 2900 8700                              |015b: goto/16 01e2 // +0087
+c37102: 55ab e790                              |015d: iget-boolean v11, v10, Lqml;.a:Z // field@90e7
+c37106: 120c                                   |015f: const/4 v12, #int 0 // #0
+c37108: 380b 0700                              |0160: if-eqz v11, 0167 // +0007
+c3710c: 6e10 5de0 0000                         |0162: invoke-virtual {v0}, Lqmo;.e:()F // method@e05d
+c37112: 0a0b                                   |0165: move-result v11
+c37114: 2802                                   |0166: goto 0168 // +0002
+c37116: 01cb                                   |0167: move v11, v12
+c37118: 5220 fa90                              |0168: iget v0, v2, Lqmn;.b:I // field@90fa
+c3711c: 8200                                   |016a: int-to-float v0, v0
+c3711e: 6e10 54e0 0200                         |016b: invoke-virtual {v2}, Lqmn;.a:()Z // method@e054
+c37124: 0a01                                   |016e: move-result v1
+c37126: 3801 0400                              |016f: if-eqz v1, 0173 // +0004
+c3712a: 7fb1                                   |0171: neg-float v1, v11
+c3712c: 280a                                   |0172: goto 017c // +000a
+c3712e: 6e10 57e0 0200                         |0173: invoke-virtual {v2}, Lqmn;.d:()Z // method@e057
+c37134: 0a01                                   |0176: move-result v1
+c37136: 3801 0400                              |0177: if-eqz v1, 017b // +0004
+c3713a: 01b1                                   |0179: move v1, v11
+c3713c: 2802                                   |017a: goto 017c // +0002
+c3713e: 01c1                                   |017b: move v1, v12
+c37140: c810                                   |017c: mul-float/2addr v0, v1
+c37142: 5221 f990                              |017d: iget v1, v2, Lqmn;.a:I // field@90f9
+c37146: 8211                                   |017f: int-to-float v1, v1
+c37148: 5225 0491                              |0180: iget v5, v2, Lqmn;.l:I // field@9104
+c3714c: 1246                                   |0182: const/4 v6, #int 4 // #4
+c3714e: 3365 0400                              |0183: if-ne v5, v6, 0187 // +0004
+c37152: 7fbc                                   |0185: neg-float v12, v11
+c37154: 2808                                   |0186: goto 018e // +0008
+c37156: 6e10 56e0 0200                         |0187: invoke-virtual {v2}, Lqmn;.c:()Z // method@e056
+c3715c: 0a05                                   |018a: move-result v5
+c3715e: 3805 0300                              |018b: if-eqz v5, 018e // +0003
+c37162: 01bc                                   |018d: move v12, v11
+c37164: c8c1                                   |018e: mul-float/2addr v1, v12
+c37166: a60c 0400                              |018f: add-float v12, v4, v0
+c3716a: 7110 509c 0c00                         |0191: invoke-static {v12}, Ljava/lang/Math;.round:(F)I // method@9c50
+c37170: 0a0b                                   |0194: move-result v11
+c37172: 522c 0091                              |0195: iget v12, v2, Lqmn;.h:I // field@9100
+c37176: b1cb                                   |0197: sub-int/2addr v11, v12
+c37178: 54ac e990                              |0198: iget-object v12, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c3717c: 6e10 f322 0c00                         |019a: invoke-virtual {v12}, Landroid/widget/LinearLayout;.getPaddingTop:()I // method@22f3
+c37182: 0a0c                                   |019d: move-result v12
+c37184: b1cb                                   |019e: sub-int/2addr v11, v12
+c37186: 54ac e990                              |019f: iget-object v12, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c3718a: 6e10 ea22 0c00                         |01a1: invoke-virtual {v12}, Landroid/widget/LinearLayout;.getHeight:()I // method@22ea
+c37190: 0a0c                                   |01a4: move-result v12
+c37192: 54a0 e990                              |01a5: iget-object v0, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c37196: 6e10 f322 0000                         |01a7: invoke-virtual {v0}, Landroid/widget/LinearLayout;.getPaddingTop:()I // method@22f3
+c3719c: 0a00                                   |01aa: move-result v0
+c3719e: b10c                                   |01ab: sub-int/2addr v12, v0
+c371a0: 54a0 e990                              |01ac: iget-object v0, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c371a4: 6e10 ee22 0000                         |01ae: invoke-virtual {v0}, Landroid/widget/LinearLayout;.getPaddingBottom:()I // method@22ee
+c371aa: 0a00                                   |01b1: move-result v0
+c371ac: b10c                                   |01b2: sub-int/2addr v12, v0
+c371ae: a600 0301                              |01b3: add-float v0, v3, v1
+c371b2: 7120 4ee0 cb00                         |01b5: invoke-static {v11, v12}, Lqml;.l:(II)I // method@e04e
+c371b8: 0a0b                                   |01b8: move-result v11
+c371ba: 7110 509c 0000                         |01b9: invoke-static {v0}, Ljava/lang/Math;.round:(F)I // method@9c50
+c371c0: 0a0c                                   |01bc: move-result v12
+c371c2: 5220 ff90                              |01bd: iget v0, v2, Lqmn;.g:I // field@90ff
+c371c6: b10c                                   |01bf: sub-int/2addr v12, v0
+c371c8: 54a0 e990                              |01c0: iget-object v0, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c371cc: 6e10 f022 0000                         |01c2: invoke-virtual {v0}, Landroid/widget/LinearLayout;.getPaddingLeft:()I // method@22f0
+c371d2: 0a00                                   |01c5: move-result v0
+c371d4: b10c                                   |01c6: sub-int/2addr v12, v0
+c371d6: 54a0 e990                              |01c7: iget-object v0, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c371da: 6e10 f622 0000                         |01c9: invoke-virtual {v0}, Landroid/widget/LinearLayout;.getWidth:()I // method@22f6
+c371e0: 0a00                                   |01cc: move-result v0
+c371e2: 54a1 e990                              |01cd: iget-object v1, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c371e6: 6e10 f022 0100                         |01cf: invoke-virtual {v1}, Landroid/widget/LinearLayout;.getPaddingLeft:()I // method@22f0
+c371ec: 0a01                                   |01d2: move-result v1
+c371ee: b110                                   |01d3: sub-int/2addr v0, v1
+c371f0: 54a1 e990                              |01d4: iget-object v1, v10, Lqml;.c:Landroid/widget/LinearLayout; // field@90e9
+c371f4: 6e10 f122 0100                         |01d6: invoke-virtual {v1}, Landroid/widget/LinearLayout;.getPaddingRight:()I // method@22f1
+c371fa: 0a01                                   |01d9: move-result v1
+c371fc: b110                                   |01da: sub-int/2addr v0, v1
+c371fe: 7120 4ee0 0c00                         |01db: invoke-static {v12, v0}, Lqml;.l:(II)I // method@e04e
+c37204: 0a0c                                   |01de: move-result v12
+c37206: 6e30 4be0 ca0b                         |01df: invoke-virtual {v10, v12, v11}, Lqml;.i:(II)V // method@e04b
+c3720c: 6e10 43e0 0a00                         |01e2: invoke-virtual {v10}, Lqml;.a:()Lpva; // method@e043
+c37212: 0c01                                   |01e5: move-result-object v1
+c37214: 2810                                   |01e6: goto 01f6 // +0010
+c37216: 2701                                   |01e7: throw v1
+c37218: 52ab ee90                              |01e8: iget v11, v10, Lqml;.h:I // field@90ee
+c3721c: 12fc                                   |01ea: const/4 v12, #int -1 // #ff
+c3721e: 32cb 0b00                              |01eb: if-eq v11, v12, 01f6 // +000b
+c37222: 54aa eb90                              |01ed: iget-object v10, v10, Lqml;.e:Ljava/util/List; // field@90eb
+c37226: 7220 049f ba00                         |01ef: invoke-interface {v10, v11}, Ljava/util/List;.get:(I)Ljava/lang/Object; // method@9f04
+c3722c: 0c0a                                   |01f2: move-result-object v10
+c3722e: 07a1                                   |01f3: move-object v1, v10
+c37230: 1f01 d12d                              |01f4: check-cast v1, Lpva; // type@2dd1
+c37234: 1101                                   |01f6: return-object v1
+      catches       : (none)
+      locals        :
+        0x0000 - 0x01f7 reg=10 this Lqml;
+        0x0000 - 0x01f7 reg=11 (null) F
+        0x0000 - 0x01f7 reg=12 (null) F
+
+  source_file_idx   : 25336 (PG)
+
+Class #8378            -

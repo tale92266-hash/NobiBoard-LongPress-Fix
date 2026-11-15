@@ -1,0 +1,25 @@
+# dexdump excerpt — Lmxa;->attachBaseContext(Landroid/content/Context;)V
+# Source: NobiBoard 176071861 (2026-11-15) classes.dex
+# Generated with: dexdump -d classes.dex (Android build-tools 35.0.0)
+# NOTE: the 'positions' (line-number) block was stripped for brevity; bytecode is complete.
+# This is a short excerpt of Google's proprietary Gboard bytecode, reproduced for debugging/interoperability.
+
+    #0              : (in Lmxa;)
+      name          : 'attachBaseContext'
+      type          : '(Landroid/content/Context;)V'
+      access        : 0x0014 (PROTECTED FINAL)
+      code          -
+      registers     : 2
+      ins           : 2
+      outs          : 2
+      insns size    : 10 16-bit code units
+979f7c:                                        |[979f7c] mxa.attachBaseContext:(Landroid/content/Context;)V
+979f8c: 6901 c15c                              |0000: sput-object v1, Lpud;.appCtx:Landroid/content/Context; // field@5cc1
+979f90: 6f20 d296 1000                         |0002: invoke-super {v0, v1}, Lpdy;.attachBaseContext:(Landroid/content/Context;)V // method@96d2
+979f96: 1201                                   |0005: const/4 v1, #int 0 // #0
+979f98: 7120 f0cb 1000                         |0006: invoke-static {v0, v1}, Lvqt;.b:(Landroid/content/Context;Z)Z // method@cbf0
+979f9e: 0e00                                   |0009: return-void
+      catches       : (none)
+      locals        :
+        0x0000 - 0x000a reg=0 this Lmxa;
+        0x0000 - 0x000a reg=1 (null) Landroid/content/Context;

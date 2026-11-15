@@ -1,0 +1,516 @@
+# dexdump excerpt — Lpud;->m([I, [Lpuz;, [Ljava/lang/Object;)V
+# Source: NobiBoard 176071861 (2026-11-15) classes.dex
+# Generated with: dexdump -d classes.dex (Android build-tools 35.0.0)
+# NOTE: the 'positions' (line-number) block was stripped for brevity; bytecode is complete.
+# This is a short excerpt of Google's proprietary Gboard bytecode, reproduced for debugging/interoperability.
+
+    #12              : (in Lpud;)
+      name          : 'm'
+      type          : '([I[Lpuz;[Ljava/lang/Object;)V'
+      access        : 0x0011 (PUBLIC FINAL)
+      code          -
+      registers     : 16
+      ins           : 4
+      outs          : 5
+      insns size    : 917 16-bit code units
+a09efc:                                        |[a09efc] pud.m:([I[Lpuz;[Ljava/lang/Object;)V
+a09f0c: 1200                                   |0000: const/4 v0, #int 0 // #0
+a09f0e: 6900 c75c                              |0001: sput-object v0, Lpud;.diagPrefs:Ljava/lang/String; // field@5cc7
+a09f12: 6205 c15c                              |0003: sget-object v5, Lpud;.appCtx:Landroid/content/Context; // field@5cc1
+a09f16: 3905 0b00                              |0005: if-nez v5, 0010 // +000b
+a09f1a: 7100 951e 0000                         |0007: invoke-static {}, Landroid/app/ActivityThread;.currentApplication:()Landroid/app/Application; // method@1e95
+a09f20: 0c05                                   |000a: move-result-object v5
+a09f22: 3805 0800                              |000b: if-eqz v5, 0013 // +0008
+a09f26: 1a0b 348d                              |000d: const-string v11, "fallback" // string@8d34
+a09f2a: 2806                                   |000f: goto 0015 // +0006
+a09f2c: 1a0b 67af                              |0010: const-string v11, "static" // string@af67
+a09f30: 2803                                   |0012: goto 0015 // +0003
+a09f32: 1a0b fba1                              |0013: const-string v11, "null" // string@a1fb
+a09f36: 690b c55c                              |0015: sput-object v11, Lpud;.diagCtxSrc:Ljava/lang/String; // field@5cc5
+a09f3a: 0000                                   |0017: nop // spacer
+a09f3c: 12f2                                   |0018: const/4 v2, #int -1 // #ff
+a09f3e: 3805 3000                              |0019: if-eqz v5, 0049 // +0030
+a09f42: 2206 3816                              |001b: new-instance v6, Ljava/lang/StringBuilder; // type@1638
+a09f46: 7010 ec62 0600                         |001d: invoke-direct {v6}, Ljava/lang/StringBuilder;.<init>:()V // method@62ec
+a09f4c: 1a0b 7caa                              |0020: const-string v11, "run ts=" // string@aa7c
+a09f50: 6e20 f862 b600                         |0022: invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a09f56: 0c06                                   |0025: move-result-object v6
+a09f58: 7100 0d63 0000                         |0026: invoke-static {}, Ljava/lang/System;.currentTimeMillis:()J // method@630d
+a09f5e: 0b00                                   |0029: move-result-wide v0
+a09f60: 6e30 f462 0601                         |002a: invoke-virtual {v6, v0, v1}, Ljava/lang/StringBuilder;.append:(J)Ljava/lang/StringBuilder; // method@62f4
+a09f66: 0c06                                   |002d: move-result-object v6
+a09f68: 6e10 0963 0600                         |002e: invoke-virtual {v6}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6309
+a09f6e: 0c08                                   |0031: move-result-object v8
+a09f70: 1200                                   |0032: const/4 v0, #int 0 // #0
+a09f72: 1201                                   |0033: const/4 v1, #int 0 // #0
+a09f74: 1a0b 90a1                              |0034: const-string v11, "nobi_diag" // string@a190
+a09f78: 6e30 731f b500                         |0036: invoke-virtual {v5, v11, v0}, Landroid/content/Context;.getSharedPreferences:(Ljava/lang/String;I)Landroid/content/SharedPreferences; // method@1f73
+a09f7e: 0c06                                   |0039: move-result-object v6
+a09f80: 3806 0f00                              |003a: if-eqz v6, 0049 // +000f
+a09f84: 6e10 e21f 0600                         |003c: invoke-virtual {v6}, Landroid/content/SharedPreferences;.edit:()Landroid/content/SharedPreferences$Editor; // method@1fe2
+a09f8a: 0c06                                   |003f: move-result-object v6
+a09f8c: 1a0b 869c                              |0040: const-string v11, "last_run" // string@9c86
+a09f90: 6e30 de1f b608                         |0042: invoke-virtual {v6, v11, v8}, Landroid/content/SharedPreferences$Editor;.putString:(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor; // method@1fde
+a09f96: 0c06                                   |0045: move-result-object v6
+a09f98: 6e10 d71f 0600                         |0046: invoke-virtual {v6}, Landroid/content/SharedPreferences$Editor;.apply:()V // method@1fd7
+a09f9e: 6300 c65c                              |0049: sget-boolean v0, Lpud;.diagFirst:Z // field@5cc6
+a09fa2: 3900 3200                              |004b: if-nez v0, 007d // +0032
+a09fa6: 1210                                   |004d: const/4 v0, #int 1 // #1
+a09fa8: 6a00 c65c                              |004e: sput-boolean v0, Lpud;.diagFirst:Z // field@5cc6
+a09fac: 3805 0c00                              |0050: if-eqz v5, 005c // +000c
+a09fb0: 1a0b e013                              |0052: const-string v11, "DEF 859: Lpud.m runs" // string@13e0
+a09fb4: 1211                                   |0054: const/4 v1, #int 1 // #1
+a09fb6: 7130 d827 b501                         |0055: invoke-static {v5, v11, v1}, Landroid/widget/Toast;.makeText:(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast; // method@27d8
+a09fbc: 0c06                                   |0058: move-result-object v6
+a09fbe: 6e10 d927 0600                         |0059: invoke-virtual {v6}, Landroid/widget/Toast;.show:()V // method@27d9
+a09fc4: 21d1                                   |005c: array-length v1, v13
+a09fc6: 1300 0900                              |005d: const/16 v0, #int 9 // #9
+a09fca: 3301 0500                              |005f: if-ne v1, v0, 0064 // +0005
+a09fce: 1230                                   |0061: const/4 v0, #int 3 // #3
+a09fd0: 4402 0d00                              |0062: aget v2, v13, v0
+a09fd4: 2206 3816                              |0064: new-instance v6, Ljava/lang/StringBuilder; // type@1638
+a09fd8: 7010 ec62 0600                         |0066: invoke-direct {v6}, Ljava/lang/StringBuilder;.<init>:()V // method@62ec
+a09fde: 1a0b ea4a                              |0069: const-string v11, "Lpud.m runs cp=" // string@4aea
+a09fe2: 6e20 f862 b600                         |006b: invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a09fe8: 0c06                                   |006e: move-result-object v6
+a09fea: 6e20 f362 2600                         |006f: invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@62f3
+a09ff0: 0c06                                   |0072: move-result-object v6
+a09ff2: 6e10 0963 0600                         |0073: invoke-virtual {v6}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6309
+a09ff8: 0c07                                   |0076: move-result-object v7
+a09ffa: 1a08 225f                              |0077: const-string v8, "NobiDiag" // string@5f22
+a09ffe: 7120 6c24 7800                         |0079: invoke-static {v8, v7}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@246c
+a0a004: 0a01                                   |007c: move-result v1
+a0a006: 0000                                   |007d: nop // spacer
+a0a008: 21d1                                   |007e: array-length v1, v13
+a0a00a: 1300 0900                              |007f: const/16 v0, #int 9 // #9
+a0a00e: 3301 b202                              |0081: if-ne v1, v0, 0333 // +02b2
+a0a012: 1230                                   |0083: const/4 v0, #int 3 // #3
+a0a014: 4402 0d00                              |0084: aget v2, v13, v0
+a0a018: 1401 96f4 0100                         |0086: const v1, #float 1.79576e-40 // #0001f496
+a0a01e: 3312 0700                              |0089: if-ne v2, v1, 0090 // +0007
+a0a022: 1a03 f389                              |008b: const-string v3, "emoji_A" // string@89f3
+a0a026: 1214                                   |008d: const/4 v4, #int 1 // #1
+a0a028: 2900 fa00                              |008e: goto/16 0188 // +00fa
+a0a02c: 1401 82f3 0100                         |0090: const v1, #float 1.7919e-40 // #0001f382
+a0a032: 3312 0700                              |0093: if-ne v2, v1, 009a // +0007
+a0a036: 1a03 f489                              |0095: const-string v3, "emoji_B" // string@89f4
+a0a03a: 1204                                   |0097: const/4 v4, #int 0 // #0
+a0a03c: 2900 f000                              |0098: goto/16 0188 // +00f0
+a0a040: 1401 31f4 0100                         |009a: const v1, #float 1.79435e-40 // #0001f431
+a0a046: 3312 0700                              |009d: if-ne v2, v1, 00a4 // +0007
+a0a04a: 1a03 f589                              |009f: const-string v3, "emoji_C" // string@89f5
+a0a04e: 1204                                   |00a1: const/4 v4, #int 0 // #0
+a0a050: 2900 e600                              |00a2: goto/16 0188 // +00e6
+a0a054: 1401 36f4 0100                         |00a4: const v1, #float 1.79442e-40 // #0001f436
+a0a05a: 3312 0700                              |00a7: if-ne v2, v1, 00ae // +0007
+a0a05e: 1a03 f689                              |00a9: const-string v3, "emoji_D" // string@89f6
+a0a062: 1204                                   |00ab: const/4 v4, #int 0 // #0
+a0a064: 2900 dc00                              |00ac: goto/16 0188 // +00dc
+a0a068: 1401 29f9 0100                         |00ae: const v1, #float 1.81217e-40 // #0001f929
+a0a06e: 3312 0700                              |00b1: if-ne v2, v1, 00b8 // +0007
+a0a072: 1a03 f789                              |00b3: const-string v3, "emoji_E" // string@89f7
+a0a076: 1204                                   |00b5: const/4 v4, #int 0 // #0
+a0a078: 2900 d200                              |00b6: goto/16 0188 // +00d2
+a0a07c: 1401 55f3 0100                         |00b8: const v1, #float 1.79127e-40 // #0001f355
+a0a082: 3312 0700                              |00bb: if-ne v2, v1, 00c2 // +0007
+a0a086: 1a03 f889                              |00bd: const-string v3, "emoji_F" // string@89f8
+a0a08a: 1204                                   |00bf: const/4 v4, #int 0 // #0
+a0a08c: 2900 c800                              |00c0: goto/16 0188 // +00c8
+a0a090: 1401 02f6 0100                         |00c2: const v1, #float 1.80086e-40 // #0001f602
+a0a096: 3312 0700                              |00c5: if-ne v2, v1, 00cc // +0007
+a0a09a: 1a03 f989                              |00c7: const-string v3, "emoji_G" // string@89f9
+a0a09e: 1204                                   |00c9: const/4 v4, #int 0 // #0
+a0a0a0: 2900 be00                              |00ca: goto/16 0188 // +00be
+a0a0a4: 1401 0af6 0100                         |00cc: const v1, #float 1.80098e-40 // #0001f60a
+a0a0aa: 3312 0700                              |00cf: if-ne v2, v1, 00d6 // +0007
+a0a0ae: 1a03 fa89                              |00d1: const-string v3, "emoji_H" // string@89fa
+a0a0b2: 1204                                   |00d3: const/4 v4, #int 0 // #0
+a0a0b4: 2900 b400                              |00d4: goto/16 0188 // +00b4
+a0a0b8: 1401 0ef6 0100                         |00d6: const v1, #float 1.80103e-40 // #0001f60e
+a0a0be: 3312 0700                              |00d9: if-ne v2, v1, 00e0 // +0007
+a0a0c2: 1a03 fb89                              |00db: const-string v3, "emoji_I" // string@89fb
+a0a0c6: 1204                                   |00dd: const/4 v4, #int 0 // #0
+a0a0c8: 2900 aa00                              |00de: goto/16 0188 // +00aa
+a0a0cc: 1401 2af9 0100                         |00e0: const v1, #float 1.81219e-40 // #0001f92a
+a0a0d2: 3312 0700                              |00e3: if-ne v2, v1, 00ea // +0007
+a0a0d6: 1a03 fc89                              |00e5: const-string v3, "emoji_J" // string@89fc
+a0a0da: 1204                                   |00e7: const/4 v4, #int 0 // #0
+a0a0dc: 2900 a000                              |00e8: goto/16 0188 // +00a0
+a0a0e0: 1401 8bf4 0100                         |00ea: const v1, #float 1.79561e-40 // #0001f48b
+a0a0e6: 3312 0700                              |00ed: if-ne v2, v1, 00f4 // +0007
+a0a0ea: 1a03 fd89                              |00ef: const-string v3, "emoji_K" // string@89fd
+a0a0ee: 1204                                   |00f1: const/4 v4, #int 0 // #0
+a0a0f0: 2900 9600                              |00f2: goto/16 0188 // +0096
+a0a0f4: 1401 9df4 0100                         |00f4: const v1, #float 1.79586e-40 // #0001f49d
+a0a0fa: 3312 0700                              |00f7: if-ne v2, v1, 00fe // +0007
+a0a0fe: 1a03 fe89                              |00f9: const-string v3, "emoji_L" // string@89fe
+a0a102: 1224                                   |00fb: const/4 v4, #int 2 // #2
+a0a104: 2900 8c00                              |00fc: goto/16 0188 // +008c
+a0a108: 1401 b8f3 0100                         |00fe: const v1, #float 1.79265e-40 // #0001f3b8
+a0a10e: 3312 0700                              |0101: if-ne v2, v1, 0108 // +0007
+a0a112: 1a03 ff89                              |0103: const-string v3, "emoji_M" // string@89ff
+a0a116: 1224                                   |0105: const/4 v4, #int 2 // #2
+a0a118: 2900 8200                              |0106: goto/16 0188 // +0082
+a0a11c: 1401 19f3 0100                         |0108: const v1, #float 1.79043e-40 // #0001f319
+a0a122: 3312 0700                              |010b: if-ne v2, v1, 0112 // +0007
+a0a126: 1a03 008a                              |010d: const-string v3, "emoji_N" // string@8a00
+a0a12a: 1204                                   |010f: const/4 v4, #int 0 // #0
+a0a12c: 2900 7800                              |0110: goto/16 0188 // +0078
+a0a130: 1401 2ef6 0100                         |0112: const v1, #float 1.80148e-40 // #0001f62e
+a0a136: 3312 0700                              |0115: if-ne v2, v1, 011c // +0007
+a0a13a: 1a03 018a                              |0117: const-string v3, "emoji_O" // string@8a01
+a0a13e: 1204                                   |0119: const/4 v4, #int 0 // #0
+a0a140: 2900 6e00                              |011a: goto/16 0188 // +006e
+a0a144: 1401 42f9 0100                         |011c: const v1, #float 1.81252e-40 // #0001f942
+a0a14a: 3312 0700                              |011f: if-ne v2, v1, 0126 // +0007
+a0a14e: 1a03 028a                              |0121: const-string v3, "emoji_P" // string@8a02
+a0a152: 1224                                   |0123: const/4 v4, #int 2 // #2
+a0a154: 2900 6400                              |0124: goto/16 0188 // +0064
+a0a158: 1401 22f6 0100                         |0126: const v1, #float 1.80131e-40 // #0001f622
+a0a15e: 3312 0700                              |0129: if-ne v2, v1, 0130 // +0007
+a0a162: 1a03 038a                              |012b: const-string v3, "emoji_Q" // string@8a03
+a0a166: 1214                                   |012d: const/4 v4, #int 1 // #1
+a0a168: 2900 5a00                              |012e: goto/16 0188 // +005a
+a0a16c: 1401 21f6 0100                         |0130: const v1, #float 1.8013e-40 // #0001f621
+a0a172: 3312 0700                              |0133: if-ne v2, v1, 013a // +0007
+a0a176: 1a03 048a                              |0135: const-string v3, "emoji_R" // string@8a04
+a0a17a: 1204                                   |0137: const/4 v4, #int 0 // #0
+a0a17c: 2900 5000                              |0138: goto/16 0188 // +0050
+a0a180: 1401 1ef6 0100                         |013a: const v1, #float 1.80126e-40 // #0001f61e
+a0a186: 3312 0700                              |013d: if-ne v2, v1, 0144 // +0007
+a0a18a: 1a03 058a                              |013f: const-string v3, "emoji_S" // string@8a05
+a0a18e: 1204                                   |0141: const/4 v4, #int 0 // #0
+a0a190: 2900 4600                              |0142: goto/16 0188 // +0046
+a0a194: 1401 14f9 0100                         |0144: const v1, #float 1.81188e-40 // #0001f914
+a0a19a: 3312 0700                              |0147: if-ne v2, v1, 014e // +0007
+a0a19e: 1a03 068a                              |0149: const-string v3, "emoji_T" // string@8a06
+a0a1a2: 1204                                   |014b: const/4 v4, #int 0 // #0
+a0a1a4: 2900 3c00                              |014c: goto/16 0188 // +003c
+a0a1a8: 1401 08f3 0100                         |014e: const v1, #float 1.79019e-40 // #0001f308
+a0a1ae: 3312 0700                              |0151: if-ne v2, v1, 0158 // +0007
+a0a1b2: 1a03 078a                              |0153: const-string v3, "emoji_U" // string@8a07
+a0a1b6: 1204                                   |0155: const/4 v4, #int 0 // #0
+a0a1b8: 2900 3200                              |0156: goto/16 0188 // +0032
+a0a1bc: 1401 c6f3 0100                         |0158: const v1, #float 1.79285e-40 // #0001f3c6
+a0a1c2: 3312 0700                              |015b: if-ne v2, v1, 0162 // +0007
+a0a1c6: 1a03 088a                              |015d: const-string v3, "emoji_V" // string@8a08
+a0a1ca: 1204                                   |015f: const/4 v4, #int 0 // #0
+a0a1cc: 2900 2800                              |0160: goto/16 0188 // +0028
+a0a1d0: 1401 40f6 0100                         |0162: const v1, #float 1.80173e-40 // #0001f640
+a0a1d6: 3312 0700                              |0165: if-ne v2, v1, 016c // +0007
+a0a1da: 1a03 098a                              |0167: const-string v3, "emoji_W" // string@8a09
+a0a1de: 1204                                   |0169: const/4 v4, #int 0 // #0
+a0a1e0: 2900 1e00                              |016a: goto/16 0188 // +001e
+a0a1e4: 1401 76f5 0100                         |016c: const v1, #float 1.7989e-40 // #0001f576
+a0a1ea: 3312 0700                              |016f: if-ne v2, v1, 0176 // +0007
+a0a1ee: 1a03 0a8a                              |0171: const-string v3, "emoji_X" // string@8a0a
+a0a1f2: 1204                                   |0173: const/4 v4, #int 0 // #0
+a0a1f4: 2900 1400                              |0174: goto/16 0188 // +0014
+a0a1f8: 1401 4cf6 0100                         |0176: const v1, #float 1.8019e-40 // #0001f64c
+a0a1fe: 3312 0700                              |0179: if-ne v2, v1, 0180 // +0007
+a0a202: 1a03 0b8a                              |017b: const-string v3, "emoji_Y" // string@8a0b
+a0a206: 1204                                   |017d: const/4 v4, #int 0 // #0
+a0a208: 2900 0a00                              |017e: goto/16 0188 // +000a
+a0a20c: 1401 2af6 0100                         |0180: const v1, #float 1.80143e-40 // #0001f62a
+a0a212: 3312 b001                              |0183: if-ne v2, v1, 0333 // +01b0
+a0a216: 1a03 0c8a                              |0185: const-string v3, "emoji_Z" // string@8a0c
+a0a21a: 1214                                   |0187: const/4 v4, #int 1 // #1
+a0a21c: 0000                                   |0188: nop // spacer
+a0a21e: 0000                                   |0189: nop // spacer
+a0a220: 0000                                   |018a: nop // spacer
+a0a222: 0000                                   |018b: nop // spacer
+a0a224: 3805 a701                              |018c: if-eqz v5, 0333 // +01a7
+a0a228: 1a0b 91a1                              |018e: const-string v11, "nobi_longpress_emoji" // string@a191
+a0a22c: 1201                                   |0190: const/4 v1, #int 0 // #0
+a0a22e: 6e30 731f b501                         |0191: invoke-virtual {v5, v11, v1}, Landroid/content/Context;.getSharedPreferences:(Ljava/lang/String;I)Landroid/content/SharedPreferences; // method@1f73
+a0a234: 0c06                                   |0194: move-result-object v6
+a0a236: 3806 9e01                              |0195: if-eqz v6, 0333 // +019e
+a0a23a: 1201                                   |0197: const/4 v1, #int 0 // #0
+a0a23c: 6e30 e81f 3601                         |0198: invoke-virtual {v6, v3, v1}, Landroid/content/SharedPreferences;.getString:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; // method@1fe8
+a0a242: 0c07                                   |019b: move-result-object v7
+a0a244: 3807 9701                              |019c: if-eqz v7, 0333 // +0197
+a0a248: 1400 96f4 0100                         |019e: const v0, #float 1.79576e-40 // #0001f496
+a0a24e: 3302 2500                              |01a1: if-ne v2, v0, 01c6 // +0025
+a0a252: 2206 3816                              |01a3: new-instance v6, Ljava/lang/StringBuilder; // type@1638
+a0a256: 7010 ec62 0600                         |01a5: invoke-direct {v6}, Ljava/lang/StringBuilder;.<init>:()V // method@62ec
+a0a25c: 1a0b ce0a                              |01a8: const-string v11, "A: prefs=" // string@0ace
+a0a260: 6e20 f862 b600                         |01aa: invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a266: 0c06                                   |01ad: move-result-object v6
+a0a268: 6e20 f862 7600                         |01ae: invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a26e: 0c06                                   |01b1: move-result-object v6
+a0a270: 6e10 0963 0600                         |01b2: invoke-virtual {v6}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6309
+a0a276: 0c08                                   |01b5: move-result-object v8
+a0a278: 1211                                   |01b6: const/4 v1, #int 1 // #1
+a0a27a: 7130 d827 8501                         |01b7: invoke-static {v5, v8, v1}, Landroid/widget/Toast;.makeText:(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast; // method@27d8
+a0a280: 0c06                                   |01ba: move-result-object v6
+a0a282: 6e10 d927 0600                         |01bb: invoke-virtual {v6}, Landroid/widget/Toast;.show:()V // method@27d9
+a0a288: 1a0b 225f                              |01be: const-string v11, "NobiDiag" // string@5f22
+a0a28c: 7120 6c24 8b00                         |01c0: invoke-static {v11, v8}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@246c
+a0a292: 0a01                                   |01c3: move-result v1
+a0a294: 6907 c75c                              |01c4: sput-object v7, Lpud;.diagPrefs:Ljava/lang/String; // field@5cc7
+a0a298: 1a0b 6f06                              |01c6: const-string v11, "," // string@066f
+a0a29c: 6e20 d762 b700                         |01c8: invoke-virtual {v7, v11}, Ljava/lang/String;.split:(Ljava/lang/String;)[Ljava/lang/String; // method@62d7
+a0a2a2: 0c08                                   |01cb: move-result-object v8
+a0a2a4: 2181                                   |01cc: array-length v1, v8
+a0a2a6: 1250                                   |01cd: const/4 v0, #int 5 // #5
+a0a2a8: 3301 6501                              |01ce: if-ne v1, v0, 0333 // +0165
+a0a2ac: 1200                                   |01d0: const/4 v0, #int 0 // #0
+a0a2ae: 460b 0800                              |01d1: aget-object v11, v8, v0
+a0a2b2: 7210 a061 0b00                         |01d3: invoke-interface {v11}, Ljava/lang/CharSequence;.length:()I // method@61a0
+a0a2b8: 0a01                                   |01d6: move-result v1
+a0a2ba: 3801 5c01                              |01d7: if-eqz v1, 0333 // +015c
+a0a2be: 1210                                   |01d9: const/4 v0, #int 1 // #1
+a0a2c0: 460b 0800                              |01da: aget-object v11, v8, v0
+a0a2c4: 7210 a061 0b00                         |01dc: invoke-interface {v11}, Ljava/lang/CharSequence;.length:()I // method@61a0
+a0a2ca: 0a01                                   |01df: move-result v1
+a0a2cc: 3801 5301                              |01e0: if-eqz v1, 0333 // +0153
+a0a2d0: 1220                                   |01e2: const/4 v0, #int 2 // #2
+a0a2d2: 460b 0800                              |01e3: aget-object v11, v8, v0
+a0a2d6: 7210 a061 0b00                         |01e5: invoke-interface {v11}, Ljava/lang/CharSequence;.length:()I // method@61a0
+a0a2dc: 0a01                                   |01e8: move-result v1
+a0a2de: 3801 4a01                              |01e9: if-eqz v1, 0333 // +014a
+a0a2e2: 1230                                   |01eb: const/4 v0, #int 3 // #3
+a0a2e4: 460b 0800                              |01ec: aget-object v11, v8, v0
+a0a2e8: 7210 a061 0b00                         |01ee: invoke-interface {v11}, Ljava/lang/CharSequence;.length:()I // method@61a0
+a0a2ee: 0a01                                   |01f1: move-result v1
+a0a2f0: 3801 4101                              |01f2: if-eqz v1, 0333 // +0141
+a0a2f4: 1240                                   |01f4: const/4 v0, #int 4 // #4
+a0a2f6: 460b 0800                              |01f5: aget-object v11, v8, v0
+a0a2fa: 7210 a061 0b00                         |01f7: invoke-interface {v11}, Ljava/lang/CharSequence;.length:()I // method@61a0
+a0a300: 0a01                                   |01fa: move-result v1
+a0a302: 3801 3801                              |01fb: if-eqz v1, 0333 // +0138
+a0a306: 1301 0900                              |01fd: const/16 v1, #int 9 // #9
+a0a30a: 2319 4833                              |01ff: new-array v9, v1, [I // type@3348
+a0a30e: 1200                                   |0201: const/4 v0, #int 0 // #0
+a0a310: 7151 0c63 0d09                         |0202: invoke-static {v13, v0, v9, v0, v1}, Ljava/lang/System;.arraycopy:(Ljava/lang/Object;ILjava/lang/Object;II)V // method@630c
+a0a316: 231a 1434                              |0205: new-array v10, v1, [Ljava/lang/Object; // type@3414
+a0a31a: 7151 0c63 0f0a                         |0207: invoke-static {v15, v0, v10, v0, v1}, Ljava/lang/System;.arraycopy:(Ljava/lang/Object;ILjava/lang/Object;II)V // method@630c
+a0a320: 1240                                   |020a: const/4 v0, #int 4 // #4
+a0a322: 1201                                   |020b: const/4 v1, #int 0 // #0
+a0a324: 3314 0300                              |020c: if-ne v4, v1, 020f // +0003
+a0a328: 1230                                   |020e: const/4 v0, #int 3 // #3
+a0a32a: 1201                                   |020f: const/4 v1, #int 0 // #0
+a0a32c: 460b 0801                              |0210: aget-object v11, v8, v1
+a0a330: 1201                                   |0212: const/4 v1, #int 0 // #0
+a0a332: 7120 a661 1b00                         |0213: invoke-static {v11, v1}, Ljava/lang/Character;.codePointAt:(Ljava/lang/CharSequence;I)I // method@61a6
+a0a338: 0a01                                   |0216: move-result v1
+a0a33a: 4b01 0900                              |0217: aput v1, v9, v0
+a0a33e: 4d0b 0a00                              |0219: aput-object v11, v10, v0
+a0a342: 1270                                   |021b: const/4 v0, #int 7 // #7
+a0a344: 1201                                   |021c: const/4 v1, #int 0 // #0
+a0a346: 3314 0300                              |021d: if-ne v4, v1, 0220 // +0003
+a0a34a: 1260                                   |021f: const/4 v0, #int 6 // #6
+a0a34c: 1211                                   |0220: const/4 v1, #int 1 // #1
+a0a34e: 460b 0801                              |0221: aget-object v11, v8, v1
+a0a352: 1201                                   |0223: const/4 v1, #int 0 // #0
+a0a354: 7120 a661 1b00                         |0224: invoke-static {v11, v1}, Ljava/lang/Character;.codePointAt:(Ljava/lang/CharSequence;I)I // method@61a6
+a0a35a: 0a01                                   |0227: move-result v1
+a0a35c: 4b01 0900                              |0228: aput v1, v9, v0
+a0a360: 4d0b 0a00                              |022a: aput-object v11, v10, v0
+a0a364: 1210                                   |022c: const/4 v0, #int 1 // #1
+a0a366: 1201                                   |022d: const/4 v1, #int 0 // #0
+a0a368: 3314 0300                              |022e: if-ne v4, v1, 0231 // +0003
+a0a36c: 1200                                   |0230: const/4 v0, #int 0 // #0
+a0a36e: 1221                                   |0231: const/4 v1, #int 2 // #2
+a0a370: 460b 0801                              |0232: aget-object v11, v8, v1
+a0a374: 1201                                   |0234: const/4 v1, #int 0 // #0
+a0a376: 7120 a661 1b00                         |0235: invoke-static {v11, v1}, Ljava/lang/Character;.codePointAt:(Ljava/lang/CharSequence;I)I // method@61a6
+a0a37c: 0a01                                   |0238: move-result v1
+a0a37e: 4b01 0900                              |0239: aput v1, v9, v0
+a0a382: 4d0b 0a00                              |023b: aput-object v11, v10, v0
+a0a386: 1250                                   |023d: const/4 v0, #int 5 // #5
+a0a388: 1211                                   |023e: const/4 v1, #int 1 // #1
+a0a38a: 3314 0300                              |023f: if-ne v4, v1, 0242 // +0003
+a0a38e: 1230                                   |0241: const/4 v0, #int 3 // #3
+a0a390: 1231                                   |0242: const/4 v1, #int 3 // #3
+a0a392: 460b 0801                              |0243: aget-object v11, v8, v1
+a0a396: 1201                                   |0245: const/4 v1, #int 0 // #0
+a0a398: 7120 a661 1b00                         |0246: invoke-static {v11, v1}, Ljava/lang/Character;.codePointAt:(Ljava/lang/CharSequence;I)I // method@61a6
+a0a39e: 0a01                                   |0249: move-result v1
+a0a3a0: 4b01 0900                              |024a: aput v1, v9, v0
+a0a3a4: 4d0b 0a00                              |024c: aput-object v11, v10, v0
+a0a3a8: 1230                                   |024e: const/4 v0, #int 3 // #3
+a0a3aa: 1201                                   |024f: const/4 v1, #int 0 // #0
+a0a3ac: 3214 0600                              |0250: if-eq v4, v1, 0256 // +0006
+a0a3b0: 1211                                   |0252: const/4 v1, #int 1 // #1
+a0a3b2: 3214 0500                              |0253: if-eq v4, v1, 0258 // +0005
+a0a3b6: 2804                                   |0255: goto 0259 // +0004
+a0a3b8: 1240                                   |0256: const/4 v0, #int 4 // #4
+a0a3ba: 2802                                   |0257: goto 0259 // +0002
+a0a3bc: 1250                                   |0258: const/4 v0, #int 5 // #5
+a0a3be: 1241                                   |0259: const/4 v1, #int 4 // #4
+a0a3c0: 460b 0801                              |025a: aget-object v11, v8, v1
+a0a3c4: 1201                                   |025c: const/4 v1, #int 0 // #0
+a0a3c6: 7120 a661 1b00                         |025d: invoke-static {v11, v1}, Ljava/lang/Character;.codePointAt:(Ljava/lang/CharSequence;I)I // method@61a6
+a0a3cc: 0a01                                   |0260: move-result v1
+a0a3ce: 4b01 0900                              |0261: aput v1, v9, v0
+a0a3d2: 4d0b 0a00                              |0263: aput-object v11, v10, v0
+a0a3d6: 079d                                   |0265: move-object v13, v9
+a0a3d8: 07af                                   |0266: move-object v15, v10
+a0a3da: 1400 96f4 0100                         |0267: const v0, #float 1.79576e-40 // #0001f496
+a0a3e0: 3302 5600                              |026a: if-ne v2, v0, 02c0 // +0056
+a0a3e4: 1a0b cd0a                              |026c: const-string v11, "A: SUB OK" // string@0acd
+a0a3e8: 1211                                   |026e: const/4 v1, #int 1 // #1
+a0a3ea: 7130 d827 b501                         |026f: invoke-static {v5, v11, v1}, Landroid/widget/Toast;.makeText:(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast; // method@27d8
+a0a3f0: 0c06                                   |0272: move-result-object v6
+a0a3f2: 6e10 d927 0600                         |0273: invoke-virtual {v6}, Landroid/widget/Toast;.show:()V // method@27d9
+a0a3f8: 1a08 225f                              |0276: const-string v8, "NobiDiag" // string@5f22
+a0a3fc: 7120 6c24 b800                         |0278: invoke-static {v8, v11}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@246c
+a0a402: 0a01                                   |027b: move-result v1
+a0a404: 1400 96f4 0100                         |027c: const v0, #float 1.79576e-40 // #0001f496
+a0a40a: 3302 4100                              |027f: if-ne v2, v0, 02c0 // +0041
+a0a40e: 3805 3f00                              |0281: if-eqz v5, 02c0 // +003f
+a0a412: 2206 3816                              |0283: new-instance v6, Ljava/lang/StringBuilder; // type@1638
+a0a416: 7010 ec62 0600                         |0285: invoke-direct {v6}, Ljava/lang/StringBuilder;.<init>:()V // method@62ec
+a0a41c: 1a0b c00a                              |0288: const-string v11, "A cp=1f496 ctx=" // string@0ac0
+a0a420: 6e20 f862 b600                         |028a: invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a426: 0c06                                   |028d: move-result-object v6
+a0a428: 6208 c55c                              |028e: sget-object v8, Lpud;.diagCtxSrc:Ljava/lang/String; // field@5cc5
+a0a42c: 6e20 f862 8600                         |0290: invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a432: 0c06                                   |0293: move-result-object v6
+a0a434: 1a0b 2404                              |0294: const-string v11, " prefs=" // string@0424
+a0a438: 6e20 f862 b600                         |0296: invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a43e: 0c06                                   |0299: move-result-object v6
+a0a440: 6208 c75c                              |029a: sget-object v8, Lpud;.diagPrefs:Ljava/lang/String; // field@5cc7
+a0a444: 6e20 f862 8600                         |029c: invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a44a: 0c06                                   |029f: move-result-object v6
+a0a44c: 1a0b 1204                              |02a0: const-string v11, " outcome=SUB OK" // string@0412
+a0a450: 6e20 f862 b600                         |02a2: invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a456: 0c06                                   |02a5: move-result-object v6
+a0a458: 6e10 0963 0600                         |02a6: invoke-virtual {v6}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6309
+a0a45e: 0c08                                   |02a9: move-result-object v8
+a0a460: 1200                                   |02aa: const/4 v0, #int 0 // #0
+a0a462: 1a0b 90a1                              |02ab: const-string v11, "nobi_diag" // string@a190
+a0a466: 6e30 731f b500                         |02ad: invoke-virtual {v5, v11, v0}, Landroid/content/Context;.getSharedPreferences:(Ljava/lang/String;I)Landroid/content/SharedPreferences; // method@1f73
+a0a46c: 0c06                                   |02b0: move-result-object v6
+a0a46e: 3806 0f00                              |02b1: if-eqz v6, 02c0 // +000f
+a0a472: 6e10 e21f 0600                         |02b3: invoke-virtual {v6}, Landroid/content/SharedPreferences;.edit:()Landroid/content/SharedPreferences$Editor; // method@1fe2
+a0a478: 0c06                                   |02b6: move-result-object v6
+a0a47a: 1a0b 799c                              |02b7: const-string v11, "last_a" // string@9c79
+a0a47e: 6e30 de1f b608                         |02b9: invoke-virtual {v6, v11, v8}, Landroid/content/SharedPreferences$Editor;.putString:(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor; // method@1fde
+a0a484: 0c06                                   |02bc: move-result-object v6
+a0a486: 6e10 d71f 0600                         |02bd: invoke-virtual {v6}, Landroid/content/SharedPreferences$Editor;.apply:()V // method@1fd7
+a0a48c: 0000                                   |02c0: nop // spacer
+a0a48e: 1203                                   |02c1: const/4 v3, #int 0 // #0
+a0a490: 1206                                   |02c2: const/4 v6, #int 0 // #0
+a0a492: 1207                                   |02c3: const/4 v7, #int 0 // #0
+a0a494: 1208                                   |02c4: const/4 v8, #int 0 // #0
+a0a496: 120b                                   |02c5: const/4 v11, #int 0 // #0
+a0a498: 1200                                   |02c6: const/4 v0, #int 0 // #0
+a0a49a: 390d 1000                              |02c7: if-nez v13, 02d7 // +0010
+a0a49e: 380f 0400                              |02c9: if-eqz v15, 02cd // +0004
+a0a4a2: 0101                                   |02cb: move v1, v0
+a0a4a4: 280c                                   |02cc: goto 02d8 // +000c
+a0a4a6: 620d 8a83                              |02cd: sget-object v13, Lwmm;.a:Lwhe; // field@838a
+a0a4aa: 1a0e a2a2                              |02cf: const-string v14, "of(...)" // string@a2a2
+a0a4ae: 7120 4211 ed00                         |02d1: invoke-static {v13, v14}, Lacad;.g:(Ljava/lang/Object;Ljava/lang/String;)V // method@1142
+a0a4b4: 5bcd c25c                              |02d4: iput-object v13, v12, Lpud;.b:Lwhe; // field@5cc2
+a0a4b8: 285c                                   |02d6: goto 0332 // +005c
+a0a4ba: 21d1                                   |02d7: array-length v1, v13
+a0a4bc: 380e 0400                              |02d8: if-eqz v14, 02dc // +0004
+a0a4c0: 21e2                                   |02da: array-length v2, v14
+a0a4c2: 2802                                   |02db: goto 02dd // +0002
+a0a4c4: 0102                                   |02dc: move v2, v0
+a0a4c6: 380f 0400                              |02dd: if-eqz v15, 02e1 // +0004
+a0a4ca: 21f3                                   |02df: array-length v3, v15
+a0a4cc: 2802                                   |02e0: goto 02e2 // +0002
+a0a4ce: 0103                                   |02e1: move v3, v0
+a0a4d0: 7120 6362 3100                         |02e2: invoke-static {v1, v3}, Ljava/lang/Math;.max:(II)I // method@6263
+a0a4d6: 0a04                                   |02e5: move-result v4
+a0a4d8: 2205 fa2e                              |02e6: new-instance v5, Lwgz; // type@2efa
+a0a4dc: 1246                                   |02e8: const/4 v6, #int 4 // #4
+a0a4de: 7020 f7cf 6500                         |02e9: invoke-direct {v5, v6}, Lwgt;.<init>:(I)V // method@cff7
+a0a4e4: 0106                                   |02ec: move v6, v0
+a0a4e6: 3546 3a00                              |02ed: if-ge v6, v4, 0327 // +003a
+a0a4ea: 3901 0400                              |02ef: if-nez v1, 02f3 // +0004
+a0a4ee: 0107                                   |02f1: move v7, v0
+a0a4f0: 2808                                   |02f2: goto 02fa // +0008
+a0a4f2: 3516 0500                              |02f3: if-ge v6, v1, 02f8 // +0005
+a0a4f6: 4407 0d06                              |02f5: aget v7, v13, v6
+a0a4fa: 2803                                   |02f7: goto 02fa // +0003
+a0a4fc: 4407 0d00                              |02f8: aget v7, v13, v0
+a0a500: 1208                                   |02fa: const/4 v8, #int 0 // #0
+a0a502: 3902 0400                              |02fb: if-nez v2, 02ff // +0004
+a0a506: 0789                                   |02fd: move-object v9, v8
+a0a508: 2808                                   |02fe: goto 0306 // +0008
+a0a50a: 3526 0500                              |02ff: if-ge v6, v2, 0304 // +0005
+a0a50e: 4609 0e06                              |0301: aget-object v9, v14, v6
+a0a512: 2803                                   |0303: goto 0306 // +0003
+a0a514: 4609 0e00                              |0304: aget-object v9, v14, v0
+a0a518: 3803 1300                              |0306: if-eqz v3, 0319 // +0013
+a0a51c: 3536 0a00                              |0308: if-ge v6, v3, 0312 // +000a
+a0a520: 390f 0500                              |030a: if-nez v15, 030f // +0005
+a0a524: 7100 4411 0000                         |030c: invoke-static {}, Lacad;.i:()V // method@1144
+a0a52a: 4608 0f06                              |030f: aget-object v8, v15, v6
+a0a52e: 2808                                   |0311: goto 0319 // +0008
+a0a530: 390f 0500                              |0312: if-nez v15, 0317 // +0005
+a0a534: 7100 4411 0000                         |0314: invoke-static {}, Lacad;.i:()V // method@1144
+a0a53a: 4608 0f00                              |0317: aget-object v8, v15, v0
+a0a53e: 220a dd22                              |0319: new-instance v10, Lpva; // type@22dd
+a0a542: 140b ffff ff7f                         |031b: const v11, #float nan // #7fffffff
+a0a548: 705b ff9e 7a89                         |031e: invoke-direct {v10, v7, v9, v8, v11}, Lpva;.<init>:(ILpuz;Ljava/lang/Object;I)V // method@9eff
+a0a54e: 6e20 3ad0 a500                         |0321: invoke-virtual {v5, v10}, Lwgz;.h:(Ljava/lang/Object;)V // method@d03a
+a0a554: d806 0601                              |0324: add-int/lit8 v6, v6, #int 1 // #01
+a0a558: 28c7                                   |0326: goto 02ed // -0039
+a0a55a: 6e10 39d0 0500                         |0327: invoke-virtual {v5}, Lwgz;.g:()Lwhe; // method@d039
+a0a560: 0c0d                                   |032a: move-result-object v13
+a0a562: 1a0e c77d                              |032b: const-string v14, "build(...)" // string@7dc7
+a0a566: 7120 4211 ed00                         |032d: invoke-static {v13, v14}, Lacad;.g:(Ljava/lang/Object;Ljava/lang/String;)V // method@1142
+a0a56c: 5bcd c25c                              |0330: iput-object v13, v12, Lpud;.b:Lwhe; // field@5cc2
+a0a570: 0e00                                   |0332: return-void
+a0a572: 1400 96f4 0100                         |0333: const v0, #float 1.79576e-40 // #0001f496
+a0a578: 3302 5c00                              |0336: if-ne v2, v0, 0392 // +005c
+a0a57c: 1a0b cc0a                              |0338: const-string v11, "A: GUARD" // string@0acc
+a0a580: 0000                                   |033a: nop // spacer
+a0a582: 0000                                   |033b: nop // spacer
+a0a584: 0000                                   |033c: nop // spacer
+a0a586: 0000                                   |033d: nop // spacer
+a0a588: 3805 0a00                              |033e: if-eqz v5, 0348 // +000a
+a0a58c: 1211                                   |0340: const/4 v1, #int 1 // #1
+a0a58e: 7130 d827 b501                         |0341: invoke-static {v5, v11, v1}, Landroid/widget/Toast;.makeText:(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast; // method@27d8
+a0a594: 0c06                                   |0344: move-result-object v6
+a0a596: 6e10 d927 0600                         |0345: invoke-virtual {v6}, Landroid/widget/Toast;.show:()V // method@27d9
+a0a59c: 1a08 225f                              |0348: const-string v8, "NobiDiag" // string@5f22
+a0a5a0: 7120 6c24 b800                         |034a: invoke-static {v8, v11}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@246c
+a0a5a6: 0a01                                   |034d: move-result v1
+a0a5a8: 1400 96f4 0100                         |034e: const v0, #float 1.79576e-40 // #0001f496
+a0a5ae: 3302 4100                              |0351: if-ne v2, v0, 0392 // +0041
+a0a5b2: 3805 3f00                              |0353: if-eqz v5, 0392 // +003f
+a0a5b6: 2206 3816                              |0355: new-instance v6, Ljava/lang/StringBuilder; // type@1638
+a0a5ba: 7010 ec62 0600                         |0357: invoke-direct {v6}, Ljava/lang/StringBuilder;.<init>:()V // method@62ec
+a0a5c0: 1a0b c00a                              |035a: const-string v11, "A cp=1f496 ctx=" // string@0ac0
+a0a5c4: 6e20 f862 b600                         |035c: invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a5ca: 0c06                                   |035f: move-result-object v6
+a0a5cc: 6208 c55c                              |0360: sget-object v8, Lpud;.diagCtxSrc:Ljava/lang/String; // field@5cc5
+a0a5d0: 6e20 f862 8600                         |0362: invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a5d6: 0c06                                   |0365: move-result-object v6
+a0a5d8: 1a0b 2404                              |0366: const-string v11, " prefs=" // string@0424
+a0a5dc: 6e20 f862 b600                         |0368: invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a5e2: 0c06                                   |036b: move-result-object v6
+a0a5e4: 6208 c75c                              |036c: sget-object v8, Lpud;.diagPrefs:Ljava/lang/String; // field@5cc7
+a0a5e8: 6e20 f862 8600                         |036e: invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a5ee: 0c06                                   |0371: move-result-object v6
+a0a5f0: 1a0b 1104                              |0372: const-string v11, " outcome=GUARD" // string@0411
+a0a5f4: 6e20 f862 b600                         |0374: invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@62f8
+a0a5fa: 0c06                                   |0377: move-result-object v6
+a0a5fc: 6e10 0963 0600                         |0378: invoke-virtual {v6}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6309
+a0a602: 0c08                                   |037b: move-result-object v8
+a0a604: 1200                                   |037c: const/4 v0, #int 0 // #0
+a0a606: 1a0b 90a1                              |037d: const-string v11, "nobi_diag" // string@a190
+a0a60a: 6e30 731f b500                         |037f: invoke-virtual {v5, v11, v0}, Landroid/content/Context;.getSharedPreferences:(Ljava/lang/String;I)Landroid/content/SharedPreferences; // method@1f73
+a0a610: 0c06                                   |0382: move-result-object v6
+a0a612: 3806 0f00                              |0383: if-eqz v6, 0392 // +000f
+a0a616: 6e10 e21f 0600                         |0385: invoke-virtual {v6}, Landroid/content/SharedPreferences;.edit:()Landroid/content/SharedPreferences$Editor; // method@1fe2
+a0a61c: 0c06                                   |0388: move-result-object v6
+a0a61e: 1a0b 799c                              |0389: const-string v11, "last_a" // string@9c79
+a0a622: 6e30 de1f b608                         |038b: invoke-virtual {v6, v11, v8}, Landroid/content/SharedPreferences$Editor;.putString:(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor; // method@1fde
+a0a628: 0c06                                   |038e: move-result-object v6
+a0a62a: 6e10 d71f 0600                         |038f: invoke-virtual {v6}, Landroid/content/SharedPreferences$Editor;.apply:()V // method@1fd7
+a0a630: 0000                                   |0392: nop // spacer
+a0a632: 2900 2eff                              |0393: goto/16 02c1 // -00d2
+      catches       : (none)
+      locals        :
+        0x0000 - 0x0395 reg=12 this Lpud;
+        0x0000 - 0x0395 reg=13 (null) [I
+        0x0000 - 0x0395 reg=14 (null) [Lpuz;
+        0x0000 - 0x0395 reg=15 (null) [Ljava/lang/Object;

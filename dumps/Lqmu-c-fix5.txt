@@ -1,0 +1,128 @@
+# dexdump excerpt — Lqmu;->c(Landroid/widget/LinearLayout;Lcom/google/android/libraries/inputmethod/widgets/SoftKeyboardView;Landroid/view/View;FFLcom/google/android/libraries/inputmethod/metadata/ActionDef;[I)V
+# Source: NobiBoard Fix5 (code 176071841) classes2.dex
+# Generated with: dexdump -d classes2.dex (Android build-tools 35.0.0)
+# NOTE: the 'positions' (line-number) block was stripped for brevity; bytecode is complete.
+# This is a short excerpt of Google's proprietary Gboard bytecode, reproduced for debugging/interoperability.
+
+      name          : 'c'
+      type          : '(Landroid/widget/LinearLayout;Lcom/google/android/libraries/inputmethod/widgets/SoftKeyboardView;Landroid/view/View;FFLcom/google/android/libraries/inputmethod/metadata/ActionDef;[I)V'
+      access        : 0x0011 (PUBLIC FINAL)
+      code          -
+      registers     : 14
+      ins           : 8
+      outs          : 8
+      insns size    : 199 16-bit code units
+c37a58:                                        |[c37a58] qmu.c:(Landroid/widget/LinearLayout;Lcom/google/android/libraries/inputmethod/widgets/SoftKeyboardView;Landroid/view/View;FFLcom/google/android/libraries/inputmethod/metadata/ActionDef;[I)V
+c37a68: 7508 45e0 0600                         |0000: invoke-super/range {v6, v7, v8, v9, v10, v11, v12, v13}, Lqml;.c:(Landroid/widget/LinearLayout;Lcom/google/android/libraries/inputmethod/widgets/SoftKeyboardView;Landroid/view/View;FFLcom/google/android/libraries/inputmethod/metadata/ActionDef;[I)V // method@e045
+c37a6e: 5468 1891                              |0003: iget-object v8, v6, Lqmu;.f:Lqmo; // field@9118
+c37a72: 5488 0791                              |0005: iget-object v8, v8, Lqmo;.d:Lqmn; // field@9107
+c37a76: 5289 fe90                              |0007: iget v9, v8, Lqmn;.f:I // field@90fe
+c37a7a: 6e10 57e0 0800                         |0009: invoke-virtual {v8}, Lqmn;.d:()Z // method@e057
+c37a80: 0a0a                                   |000c: move-result v10
+c37a82: 12fb                                   |000d: const/4 v11, #int -1 // #ff
+c37a84: 120c                                   |000e: const/4 v12, #int 0 // #0
+c37a86: 390a 0c00                              |000f: if-nez v10, 001b // +000c
+c37a8a: 6e10 56e0 0800                         |0011: invoke-virtual {v8}, Lqmn;.c:()Z // method@e056
+c37a90: 0a0a                                   |0014: move-result v10
+c37a92: 390a 0600                              |0015: if-nez v10, 001b // +0006
+c37a96: 5288 fc90                              |0017: iget v8, v8, Lqmn;.d:I // field@90fc
+c37a9a: b0b8                                   |0019: add-int/2addr v8, v11
+c37a9c: 2802                                   |001a: goto 001c // +0002
+c37a9e: 01c8                                   |001b: move v8, v12
+c37aa0: 546a 1991                              |001c: iget-object v10, v6, Lqmu;.g:Lqmr; // field@9119
+c37aa4: 54ad 0b91                              |001e: iget-object v13, v10, Lqmr;.b:Landroid/graphics/Point; // field@910b
+c37aa8: 6e30 2013 9d08                         |0020: invoke-virtual {v13, v9, v8}, Landroid/graphics/Point;.set:(II)V // method@1320
+c37aae: 54ad 0c91                              |0023: iget-object v13, v10, Lqmr;.c:Landroid/graphics/Point; // field@910c
+c37ab2: 6e30 2013 9d08                         |0025: invoke-virtual {v13, v9, v8}, Landroid/graphics/Point;.set:(II)V // method@1320
+c37ab8: 54a8 0d91                              |0028: iget-object v8, v10, Lqmr;.d:Ljava/util/List; // field@910d
+c37abc: 7210 009f 0800                         |002a: invoke-interface {v8}, Ljava/util/List;.clear:()V // method@9f00
+c37ac2: 01c9                                   |002d: move v9, v12
+c37ac4: 6e10 67e0 0a00                         |002e: invoke-virtual {v10}, Lqmr;.d:()I // method@e067
+c37aca: 0a0d                                   |0031: move-result v13
+c37acc: 35d9 5900                              |0032: if-ge v9, v13, 008b // +0059
+c37ad0: 6e20 e622 9700                         |0034: invoke-virtual {v7, v9}, Landroid/widget/LinearLayout;.getChildAt:(I)Landroid/view/View; // method@22e6
+c37ad6: 0c0d                                   |0037: move-result-object v13
+c37ad8: 1f0d c106                              |0038: check-cast v13, Landroid/view/ViewGroup; // type@06c1
+c37adc: 01c0                                   |003a: move v0, v12
+c37ade: 6e10 66e0 0a00                         |003b: invoke-virtual {v10}, Lqmr;.c:()I // method@e066
+c37ae4: 0a01                                   |003e: move-result v1
+c37ae6: 3510 4900                              |003f: if-ge v0, v1, 0088 // +0049
+c37aea: 6e20 221f 0d00                         |0041: invoke-virtual {v13, v0}, Landroid/view/ViewGroup;.getChildAt:(I)Landroid/view/View; // method@1f22
+c37af0: 0c01                                   |0044: move-result-object v1
+c37af2: 6e10 251e 0100                         |0045: invoke-virtual {v1}, Landroid/view/View;.getId:()I // method@1e25
+c37af8: 0a02                                   |0048: move-result v2
+c37afa: 32b2 3800                              |0049: if-eq v2, v11, 0081 // +0038
+c37afe: 2202 cd04                              |004b: new-instance v2, Landroid/graphics/Point; // type@04cd
+c37b02: 7030 1a13 0209                         |004d: invoke-direct {v2, v0, v9}, Landroid/graphics/Point;.<init>:(II)V // method@131a
+c37b08: 6e10 251e 0100                         |0050: invoke-virtual {v1}, Landroid/view/View;.getId:()I // method@1e25
+c37b0e: 0a03                                   |0053: move-result v3
+c37b10: 3801 2500                              |0054: if-eqz v1, 0079 // +0025
+c37b14: 1404 0b07 0b7f                         |0056: const v4, #float 1.84799e+38 // #7f0b070b
+c37b1a: 6e20 0f1e 4100                         |0059: invoke-virtual {v1, v4}, Landroid/view/View;.findViewById:(I)Landroid/view/View; // method@1e0f
+c37b20: 0c04                                   |005c: move-result-object v4
+c37b22: 3904 0900                              |005d: if-nez v4, 0066 // +0009
+c37b26: 1404 0a07 0b7f                         |005f: const v4, #float 1.84799e+38 // #7f0b070a
+c37b2c: 6e20 0f1e 4100                         |0062: invoke-virtual {v1, v4}, Landroid/view/View;.findViewById:(I)Landroid/view/View; // method@1e0f
+c37b32: 0c04                                   |0065: move-result-object v4
+c37b34: 3804 0b00                              |0066: if-eqz v4, 0071 // +000b
+c37b38: 2205 012f                              |0068: new-instance v5, Lqmc; // type@2f01
+c37b3c: 7054 26e0 2513                         |006a: invoke-direct {v5, v2, v3, v1, v4}, Lqmc;.<init>:(Landroid/graphics/Point;ILandroid/view/View;Landroid/view/View;)V // method@e026
+c37b42: 7220 fd9e 5800                         |006d: invoke-interface {v8, v5}, Ljava/util/List;.add:(Ljava/lang/Object;)Z // method@9efd
+c37b48: 2815                                   |0070: goto 0085 // +0015
+c37b4a: 2206 4c1e                              |0071: new-instance v6, Ljava/lang/NullPointerException; // type@1e4c
+c37b4e: 1a07 ae61                              |0073: const-string v7, "Null labelView" // string@61ae
+c37b52: 7020 5f9c 7600                         |0075: invoke-direct {v6, v7}, Ljava/lang/NullPointerException;.<init>:(Ljava/lang/String;)V // method@9c5f
+c37b58: 2706                                   |0078: throw v6
+c37b5a: 2206 4c1e                              |0079: new-instance v6, Ljava/lang/NullPointerException; // type@1e4c
+c37b5e: 1a07 0f62                              |007b: const-string v7, "Null view" // string@620f
+c37b62: 7020 5f9c 7600                         |007d: invoke-direct {v6, v7}, Ljava/lang/NullPointerException;.<init>:(Ljava/lang/String;)V // method@9c5f
+c37b68: 2706                                   |0080: throw v6
+c37b6a: 1201                                   |0081: const/4 v1, #int 0 // #0
+c37b6c: 7220 fd9e 1800                         |0082: invoke-interface {v8, v1}, Ljava/util/List;.add:(Ljava/lang/Object;)Z // method@9efd
+c37b72: d800 0001                              |0085: add-int/lit8 v0, v0, #int 1 // #01
+c37b76: 28b4                                   |0087: goto 003b // -004c
+c37b78: d809 0901                              |0088: add-int/lit8 v9, v9, #int 1 // #01
+c37b7c: 28a4                                   |008a: goto 002e // -005c
+c37b7e: 5460 eb90                              |008b: iget-object v0, v6, Lqml;.e:Ljava/util/List; // field@90eb
+c37b82: 3800 3600                              |008d: if-eqz v0, 00c3 // +0036
+c37b86: 7210 109f 0000                         |008f: invoke-interface {v0}, Ljava/util/List;.size:()I // method@9f10
+c37b8c: 0a01                                   |0092: move-result v1
+c37b8e: 1302 0900                              |0093: const/16 v2, #int 9 // #9
+c37b92: 3321 2e00                              |0095: if-ne v1, v2, 00c3 // +002e
+c37b96: 1231                                   |0097: const/4 v1, #int 3 // #3
+c37b98: 7220 049f 1000                         |0098: invoke-interface {v0, v1}, Ljava/util/List;.get:(I)Ljava/lang/Object; // method@9f04
+c37b9e: 0c01                                   |009b: move-result-object v1
+c37ba0: 2012 d12d                              |009c: instance-of v2, v1, Lpva; // type@2dd1
+c37ba4: 3802 2500                              |009e: if-eqz v2, 00c3 // +0025
+c37ba8: 5412 918d                              |00a0: iget-object v2, v1, Lpva;.e:Ljava/lang/Object; // field@8d91
+c37bac: 2023 281e                              |00a2: instance-of v3, v2, Ljava/lang/CharSequence; // type@1e28
+c37bb0: 3803 1f00                              |00a4: if-eqz v3, 00c3 // +001f
+c37bb4: 7210 919b 0200                         |00a6: invoke-interface {v2}, Ljava/lang/CharSequence;.length:()I // method@9b91
+c37bba: 0a03                                   |00a9: move-result v3
+c37bbc: 3803 1900                              |00aa: if-eqz v3, 00c3 // +0019
+c37bc0: 1203                                   |00ac: const/4 v3, #int 0 // #0
+c37bc2: 7120 989b 3200                         |00ad: invoke-static {v2, v3}, Ljava/lang/Character;.codePointAt:(Ljava/lang/CharSequence;I)I // method@9b98
+c37bc8: 0a03                                   |00b0: move-result v3
+c37bca: 1502 0100                              |00b1: const/high16 v2, #int 65536 // #1
+c37bce: 3423 1000                              |00b3: if-lt v3, v2, 00c3 // +0010
+c37bd2: 5460 1991                              |00b5: iget-object v0, v6, Lqmu;.g:Lqmr; // field@9119
+c37bd6: 5401 0b91                              |00b7: iget-object v1, v0, Lqmr;.b:Landroid/graphics/Point; // field@910b
+c37bda: 1212                                   |00b9: const/4 v2, #int 1 // #1
+c37bdc: 1213                                   |00ba: const/4 v3, #int 1 // #1
+c37bde: 6e30 2013 2103                         |00bb: invoke-virtual {v1, v2, v3}, Landroid/graphics/Point;.set:(II)V // method@1320
+c37be4: 5401 0c91                              |00be: iget-object v1, v0, Lqmr;.c:Landroid/graphics/Point; // field@910c
+c37be8: 6e30 2013 2103                         |00c0: invoke-virtual {v1, v2, v3}, Landroid/graphics/Point;.set:(II)V // method@1320
+c37bee: 7010 78e0 0600                         |00c3: invoke-direct {v6}, Lqmu;.p:()V // method@e078
+c37bf4: 0e00                                   |00c6: return-void
+      catches       : (none)
+      locals        :
+        0x0000 - 0x00c7 reg=6 this Lqmu;
+        0x0000 - 0x00c7 reg=7 (null) Landroid/widget/LinearLayout;
+        0x0000 - 0x00c7 reg=8 (null) Lcom/google/android/libraries/inputmethod/widgets/SoftKeyboardView;
+        0x0000 - 0x00c7 reg=9 (null) Landroid/view/View;
+        0x0000 - 0x00c7 reg=10 (null) F
+        0x0000 - 0x00c7 reg=11 (null) F
+        0x0000 - 0x00c7 reg=12 (null) Lcom/google/android/libraries/inputmethod/metadata/ActionDef;
+        0x0000 - 0x00c7 reg=13 (null) [I
+
+    #3              : (in Lqmu;)

@@ -1,0 +1,23 @@
+# dexdump excerpt — Lqmu;->e()V
+# Source: NobiBoard Fix5 (code 176071841) classes2.dex
+# Generated with: dexdump -d classes2.dex (Android build-tools 35.0.0)
+# NOTE: the 'positions' (line-number) block was stripped for brevity; bytecode is complete.
+# This is a short excerpt of Google's proprietary Gboard bytecode, reproduced for debugging/interoperability.
+
+      name          : 'e'
+      type          : '()V'
+      access        : 0x0011 (PUBLIC FINAL)
+      code          -
+      registers     : 1
+      ins           : 1
+      outs          : 1
+      insns size    : 7 16-bit code units
+c37c48:                                        |[c37c48] qmu.e:()V
+c37c58: 6f10 47e0 0000                         |0000: invoke-super {v0}, Lqml;.e:()V // method@e047
+c37c5e: 7010 78e0 0000                         |0003: invoke-direct {v0}, Lqmu;.p:()V // method@e078
+c37c64: 0e00                                   |0006: return-void
+      catches       : (none)
+      locals        :
+        0x0000 - 0x0007 reg=0 this Lqmu;
+
+    #5              : (in Lqmu;)

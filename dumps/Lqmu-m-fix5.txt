@@ -1,0 +1,37 @@
+# dexdump excerpt — Lqmu;->m(Lqmc;)V
+# Source: NobiBoard Fix5 (code 176071841) classes2.dex
+# Generated with: dexdump -d classes2.dex (Android build-tools 35.0.0)
+# NOTE: the 'positions' (line-number) block was stripped for brevity; bytecode is complete.
+# This is a short excerpt of Google's proprietary Gboard bytecode, reproduced for debugging/interoperability.
+
+      name          : 'm'
+      type          : '(Lqmc;)V'
+      access        : 0x0011 (PUBLIC FINAL)
+      code          -
+      registers     : 5
+      ins           : 2
+      outs          : 2
+      insns size    : 33 16-bit code units
+c3826c:                                        |[c3826c] qmu.m:(Lqmc;)V
+c3827c: 3804 2000                              |0000: if-eqz v4, 0020 // +0020
+c38280: 5530 1791                              |0002: iget-boolean v0, v3, Lqmu;.a:Z // field@9117
+c38284: 5441 c690                              |0004: iget-object v1, v4, Lqmc;.d:Landroid/view/View; // field@90c6
+c38288: 1502 803f                              |0006: const/high16 v2, #int 1065353216 // #3f80
+c3828c: 3800 1200                              |0008: if-eqz v0, 001a // +0012
+c38290: 5444 c390                              |000a: iget-object v4, v4, Lqmc;.a:Landroid/graphics/Point; // field@90c3
+c38294: 5433 1991                              |000c: iget-object v3, v3, Lqmu;.g:Lqmr; // field@9119
+c38298: 5433 0c91                              |000e: iget-object v3, v3, Lqmr;.c:Landroid/graphics/Point; // field@910c
+c3829c: 6e20 1d13 3400                         |0010: invoke-virtual {v4, v3}, Landroid/graphics/Point;.equals:(Ljava/lang/Object;)Z // method@131d
+c382a2: 0a03                                   |0013: move-result v3
+c382a4: 3803 0600                              |0014: if-eqz v3, 001a // +0006
+c382a8: 7110 74e0 0100                         |0016: invoke-static {v1}, Lqmu;.l:(Landroid/view/View;)F // method@e074
+c382ae: 0a02                                   |0019: move-result v2
+c382b0: 6e20 d11e 2100                         |001a: invoke-virtual {v1, v2}, Landroid/view/View;.setScaleX:(F)V // method@1ed1
+c382b6: 6e20 d21e 2100                         |001d: invoke-virtual {v1, v2}, Landroid/view/View;.setScaleY:(F)V // method@1ed2
+c382bc: 0e00                                   |0020: return-void
+      catches       : (none)
+      locals        :
+        0x0000 - 0x0021 reg=3 this Lqmu;
+        0x0000 - 0x0021 reg=4 (null) Lqmc;
+
+    #7              : (in Lqmu;)
